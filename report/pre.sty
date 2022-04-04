@@ -1,0 +1,238 @@
+% В этом документе преамбула
+\ProvidesPackage{pre}
+
+
+% На случай, если вот прям потребуют этот TimesNewRoman
+\usepackage{ifxetex}
+\ifxetex
+    \usepackage{fontspec}
+    \usepackage[english, main=russian]{babel}
+    \usepackage{indentfirst}
+    \usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+    
+    \usepackage{unicode-math}
+    \setmainfont{XITS}
+    \setmathfont{XITS Math}
+    \setmainfont{Times New Roman}
+\else
+    %%% Работа с русским языком
+    \usepackage{cmap}                                           % поиск в PDF
+    \usepackage{mathtext}                                       % русские буквы в формулах
+    \usepackage[T2A]{fontenc}                                   % кодировка
+    \usepackage[utf8]{inputenc}                                 % кодировка исходного текста
+    \usepackage[english, main=russian]{babel}                         % локализация и переносы
+    \usepackage{indentfirst}                                    % делать абзацный отступ сразу после начала нового section
+    %\frenchspacing                                             % отмена доп. пробела после точки --- конца предложения
+\fi
+
+
+
+
+%%% Работа с картинками
+\usepackage{graphicx}                                       % Для вставки рисунков
+\graphicspath{{images/}{images2/}}                          % папки с картинками
+\setlength\fboxsep{3pt}                                     % Отступ рамки \fbox{} от рисунка
+\setlength\fboxrule{1pt}                                    % Толщина линий рамки \fbox{}
+\usepackage{wrapfig}                                        % Обтекание рисунков текстом
+\usepackage{caption}                                        % дополнительные инструменты для оформления подписей
+
+
+
+
+
+%%% Работа с таблицами
+\usepackage{array,tabularx,tabulary,booktabs}               % Дополнительная работа с таблицами
+\usepackage{longtable}                                      % Длинные таблицы
+\usepackage{multirow}                                       % Слияние строк в таблице
+
+
+
+%%% Команды для рис. и табл.
+\newcommand{\figref}[1]{рис.~\ref{#1}}
+\newcommand{\Figref}[1]{Рис.~\ref{#1}}
+\newcommand{\tableref}[1]{табл.~\ref{#1}}
+\newcommand{\Tableref}[1]{Табл.~\ref{#1}}
+\newcommand{\seefigref}[1]{см.~рис.~\ref{#1}}
+\newcommand{\seetableref}[1]{см.~рис.~\ref{#1}}
+\newcommand{\seeeqref}[1]{см.~формулу~\ref{#1}}
+
+
+
+%% Шрифты
+\usepackage{euscript}                                       % Шрифт Евклид
+\usepackage{mathrsfs}                                       % Красивый матшрифт
+
+
+
+
+
+%%% Всякое
+% В необязательном аргументе twocolumn для набора в две колонки
+% В необязательном аргументе landscape для альбомной ориентации
+% В необязательном аргументе fleqn для выравнивания выключных формул по левому краю
+\usepackage[usenames,dvipsnames,svgnames,table,rgb]{xcolor} % дополнительная работа с цветом
+%\usepackage{extsizes}                                       % Возможность сделать 14-й шрифт
+%\usepackage{lastpage}                                       % Узнать номер последней строки
+\usepackage{soul}                                           % Начертание
+%\usepackage{etoolbox}                                       % логические операторы
+%\usepackage{multicol}                                       % Несколько колонок
+\usepackage[top = 2cm, left = 3cm, right = 1cm, bottom = 2cm]{geometry}                         % геометрия документа (обязательно после extsizes)
+
+%%% Колонтитулы
+%\usepackage{fancyhdr}
+%\renewcommand{\footrulewidth}{\headrulewidth}               % Эта команда создаёт нижнюю линию (для общности)
+%\renewcommand{\headrulewidth}{0mm}                         % Эта команда уберёт верхнюю линию
+%\renewcommand{\footrulewidth}{0mm}                         % Эта команда, соответственно, уберёт нижнюю линию
+                    % Все эти команды можно использовать непосредственно в тексте документа
+%\pagestyle{fancy}
+%\lfoot{Нижний левый}
+%\rfoot{Нижний правый}
+%\lhead{Верхний левый}
+%\chead{Верхний центральный}
+%\rhead{Верхний правый}
+%\cfoot{Нижний в центре}    % По умолчанию здесь номер страницы
+
+%%% Интерлиньяж
+\usepackage{setspace}
+\onehalfspacing        % Интерлиньяж 1,5
+%\doublespacing         % Интерлиньяж 2
+%\singlespacing         % Интерлиньяж 1
+
+
+
+
+
+%%% Гиперссылки
+\usepackage{hyperref}
+\definecolor{blackref}{rgb}{0.5,0,0.5}
+\hypersetup{                                                % Гиперссылки
+    unicode=true,                                           % русские буквы в раздела PDF
+    pdftitle={Отчёт о научно-исследовательской работе студента},                                   % Заголовок
+    pdfauthor={Широков Денис Дмитриевич},                                      % Автор
+    pdfsubject={Численные методы решения задач математической физики с использованием локально-адаптивных сеток},                                      % Тема
+    colorlinks=true,                                        % false: ссылки в рамках; true: цветные ссылки
+    linkcolor=red,                                          % внутренние ссылки
+    citecolor=green,                                        % на библиографию
+    filecolor=magenta,                                      % на файлы
+    urlcolor=blackref                                           % на URL
+}
+
+
+
+
+
+%%% Математика
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+\usepackage{icomma}	% умная запятая
+\usepackage{latexsym}
+\usepackage{esint}				                	% интегралы
+\usepackage{booktabs}				                % таблицы
+\usepackage[subnum]{cases}
+% [subnum] --- Force all numcases environments to be treated as subnumcases
+% [amsstyle] For compatibility with amsmath’s cases, make numcases use cramped
+% math style (\textstyle), and put explanations in the same math style.
+% [casesstyle] Change amsmath’s cases environment to work in the text/math style
+% of numcases.
+% [cases] Define a cases environment for use without amsmath. (This is actually
+% the same as the [casesstyle] option.)
+% [fleqn] Flush-left equation alignment, indented by \mathindent or \mathmargin.
+% (Usually inherited from the \documentclass options.)
+% [leqno] Left-side equation numbering (usually inherited from the \documentclass
+% options). This looks silly with numbered cases!
+%\renewcommand\thesubequation{\themainequation.\Alph{equation}}
+
+%% Номера формул
+%\mathtoolsset{showonlyrefs=true} % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
+%\usepackage{leqno} % Нумереация формул слева
+
+
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+\renewcommand{\kappa}{\varkappa}
+\renewcommand{\le}{\leqslant}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\ge}{\geqslant}
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\emptyset}{\varnothing}
+
+%\renewcommand{\vec}[1]{\ensuremath{\vec{#1}}}
+\newcommand{\rowchick}[1]{\underset{\downarrow}{#1}}
+\newcommand{\specialrowchick}[2]{\smash{\underset{\downarrow}{#1}}\lefteqn{\phantom{#1}}_{#2}\lefteqn{\phantom{\underset{\downarrow}{#1}}}}
+\newcommand{\hence}{\displaystyle \quad\Rightarrow\quad}
+\newcommand{\sogda}{\displaystyle \quad\Leftrightarrow\quad}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\renewcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\Y}{\mathbb{Y}}
+\newcommand{\B}{\mathbb{B}}
+
+
+\DeclareMathOperator{\sgn}{\mathop{sgn}}
+\DeclareMathOperator{\Rg}{\mathop{Rg}}
+\renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
+\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
+\DeclareMathOperator{\dddots}{\mathinner{\mkern2mu\raise1pt\hbox{.}\mkern2mu \raise4pt\hbox{.}\mkern2mu\raise7pt\hbox{.}\mkern1mu}}
+
+% Норма. Для автоматического размера, использовать \norm*{x}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+
+
+
+
+
+%%% Создание новых "теорем", свои теоремы
+% \theoremstyle{plain}
+% \newtheorem{theorem}{Теорема}[section] % Тут нумерация теорем подчинена разделам, т.е. будет Теорема (\thesection).1
+% \newtheorem{statement}[theorem]{Утверждение} % Тут нумерация утверждения продолжается вместе с нумерацией теорем
+% \newtheorem*{theorem*}{Теорема}
+% \newtheorem*{statement*}{Утверждение}
+
+% \theoremstyle{definition}
+% \newtheorem{Definition}{Опр}[section]
+% \newtheorem*{Definition*}{Определение}
+% \newtheorem{corollary}{Следствие}[theorem]
+% \newtheorem*{corollary*}{Следствие}
+% \newtheorem*{example*}{Пример}
+
+% \theoremstyle{remark}
+% \newtheorem{Remark}{Замечание}
+% \newtheorem*{Remark*}{Замечание}
+
+
+\theoremstyle{plain}
+\newtheorem*{theorem*}{Теорема.}
+\newtheorem{theorem}{Теорема.}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Опр.}
+\newtheorem*{definition*}{Опр.}
+
+
+
+
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usetikzlibrary {arrows.meta}
+
+
+
+
+%%% Заголовок
+% \author{Широков Денис Дмитриевич}
+% \title{Практическое задание №1}
+% \date{\today}
+
+
+
+
+%\usepackage[most]{tcolorbox} % для управления цветом
+%\pagecolor{black}
+%\color{white}
