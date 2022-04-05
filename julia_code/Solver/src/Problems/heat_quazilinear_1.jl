@@ -107,6 +107,7 @@ end
 #     β = zeros(g.Nx)
 #     temp_x = zeros(g.Nx)
 
+
 #     # Цикл по слоям
 #     for j = 1:g.Nt-1
 
