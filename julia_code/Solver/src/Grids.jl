@@ -1,4 +1,4 @@
-export Grid, Grid1, Grid2, UniformGrid, GeneralGrid, UniformGrid_2
+export Grid, Grid1, Grid2, UniformGrid, GeneralGrid, UniformGrid_2, NGrid, TimeNGrid, UniformNGrid, UniformTime, UniformTimeNGrid
 
 
 """
@@ -139,6 +139,182 @@ abstract type Grid end
             new((x1.len, x2.len), t.len, h, τ, (x1, x2), t)
         end
     end
+#-
+
+
+"""
+Абстрактный тип сетка (имеется ввиду пространственная сетка)
+"""
+abstract type NGrid end
+
+
+"""
+Абстрактный тип пространственно-временная сетка
+"""
+abstract type TimeNGrid end
+
+
+"""
+Равномерная пространственная сетка
+"""
+struct UniformNGrid <: NGrid
+
+    dim::Int
+    N::Vector{Int}
+    h::Vector{Float64}
+    x::Vector{Vector{Float64}}
+
+    function UniformNGrid(dim::Integer, N::Vector{<:Integer})
+        if (length(N) != dim)
+            throw(DimensionMismatch("dim != length(N)"))
+        end
+
+        x::Vector{Vector{Float64}} = Vector{Vector{Float64}}(undef, dim)
+        h::Vector{Float64} = Vector{Float64}(undef, dim)
+        for i = 1:dim
+            x[i] = collect(range(start=0, stop=1, length=N[i]))
+            h[i] = x[i][2] - x[i][1]
+        end
+
+        new(dim, N, h, x)
+    end
+
+
+    function UniformNGrid(dim::Integer, h::Vector{<:Real})
+        if (length(h) != dim)
+            throw(DimensionMismatch("dim != length(h)"))
+        end
+
+        x::Vector{Vector{Float64}} = Vector{Vector{Float64}}(undef, dim)
+        N::Vector{Int} = Vector{Int}(undef, dim)
+
+        for i = 1:dim
+            x[i] = collect(range(start=0, stop=1, step=h[i]))
+            N[i] = length(x[i])
+        end
+
+        new(dim, N, h, x)
+    end
+
+
+    function UniformNGrid(x_b::Vector{Tuple{Real, Real}}, N::Vector{<:Integer})
+        x::Vector{Vector{Float64}} = Vector{Vector{Float64}}(undef, dim)
+        h::Vector{Float64} = Vector{Float64}(undef, dim)
+
+        for i = 1:dim
+            x[i] = collect(range(start=x_b[i][1], stop=x_b[i][2], length=N[i]))
+            h[i] = x[i][2] - x[i][1]
+        end
+
+        new(dim, N, h, x)
+    end
+
+
+    function UniformNGrid(x_b::Vector{Tuple{Real, Real}}, h::Vector{Float64})
+        x::Vector{Vector{Float64}} = Vector{Vector{Float64}}(undef, dim)
+        N::Vector{Int} = Vector{Int}(undef, dim)
+
+        for i = 1:dim
+            x[i] = collect(range(start=x_b[i][1], stop=x_b[i][2], step=h[i]))
+            N[i] = length(x[i])
+        end
+
+        new(dim, N, h, x)
+    end
+
+
+    function UniformNGrid(L::Vector{<:Real}, N::Vector{<:Integer})
+        x::Vector{Vector{Float64}} = Vector{Vector{Float64}}(undef, dim)
+        h::Vector{Float64} = Vector{Float64}(undef, dim)
+
+        for i = 1:dim
+            x[i] = collect(range(start=0, stop=L[i], length=N[i]))
+            h[i] = x[i][2] - x[i][1]
+        end
+
+        new(dim, N, h, x)
+    end
+
+
+    function UniformNGrid(L::Vector{<:Real}, h::Vector{<:Real})
+        x::Vector{Vector{Float64}} = Vector{Vector{Float64}}(undef, dim)
+        N::Vector{Int} = Vector{Int}(undef, dim)
+
+        for i = 1:dim
+            x[i] = collect(range(start=0, stop=L[i], step=h[i]))
+            N[i] = length(x[i])
+        end
+
+        new(dim, N, h, x)
+    end
+end
+
+
+"""
+Равномерная сетка по времени
+"""
+struct UniformTime
+    N::Int
+    τ::Float64
+    t::Vector{Float64}
+
+
+    function UniformTime(N::Integer)
+        t = range(start=0, stop=1, length=N)
+        τ = t.step
+
+        new(N, τ, t)
+    end
+
+
+    function UniformTime(τ::Float64)
+        t = range(start=0, stop=1, step=τ)
+        N = t.len
+
+        new(N, τ, t)
+    end
+
+
+    function UniformTime(t_b::Tuple{Real, Real}, N::Integer)
+        t = range(start=t_b[1], stop=t_b[2], length=N)
+        τ = t.step
+
+        new(N, τ, t)
+    end
+
+
+    function UniformTime(t_b::Tuple{Real, Real}, τ::Float64)
+        t = range(start=_b[1], stop=t_b[2], step=τ)
+        N = t.len
+
+        new(N, τ, t)
+    end
+
+
+    function UniformTime(T::Real, N::Integer)
+        t = range(start=0, stop=T, length=N)
+        τ = t.step
+
+        new(N, τ, t)
+    end
+
+
+    function UniformTime(T::Real, τ::Real)
+        t = range(start=0, stop=T, step=τ)
+        N = t.len
+
+        new(N, τ, t)
+    end
+end
+
+
+"""
+Равномерная пространственно-временная сетка
+"""
+struct UniformTimeNGrid <: TimeNGrid
+    g::UniformNGrid
+    t::UniformTime
+end
 
 
     # """
