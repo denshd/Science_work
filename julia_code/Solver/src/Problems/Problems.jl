@@ -1,4 +1,4 @@
-export Problem, Parabolic_problem, Hyperbolic_problem, Elliptic_problem, Heat_linear_const_1, Heat_linear_3, Heat_quazilinear_1, Heat2_linear_const_1, Heat2_linear_1
+export Problem, Parabolic_problem, Hyperbolic_problem, Elliptic_problem, Heat_linear_const_1, Heat_linear_3, Heat_quazilinear_1, Heat2_linear_const_1, Heat2_linear_3, Heat2_quazilinear_3, Heat2_quazilinear_1
 
 abstract type Problem end
     abstract type Parabolic_problem <: Problem end
@@ -59,7 +59,9 @@ abstract type Problem end
     end
 
 
-
+    """
+    Первая краевая задача для двумерного линейного уравнения теплопроводности с постоянными коэффициентами
+    """
     struct Heat2_linear_const_1{F<:Function, Mu_1<:Function, Mu1<:Function, Mu_2<:Function, Mu2<:Function, U<:Function} <: Parabolic_problem
         f::F
         mu_1::Mu_1
@@ -69,7 +71,26 @@ abstract type Problem end
         u0::U
     end
 
-    struct Heat2_linear_1{K1<:Function, K2<:Function, F<:Function,
+
+    """
+    Первая краевая задача для двумерного квазилинейного уравнения теплопроводности
+    """
+    struct Heat2_quazilinear_1{K1<:Function, K2<:Function, F<:Function, Mu_1<:Function, Mu1<:Function, Mu_2<:Function, Mu2<:Function, U<:Function} <: Parabolic_problem
+        k1::K1
+        k2::K2
+        f::F
+        mu_1::Mu_1
+        mu1::Mu1
+        mu_2::Mu_2
+        mu2::Mu2
+        u0::U
+    end
+
+
+    """
+    Третья краевая задача для двумерного линейного уравнения теплопроводности со средоточенной теплоёмкостью
+    """
+    struct Heat2_linear_3{K1<:Function, K2<:Function, F<:Function,
         Chi_minus_1<:Function, Beta_minus_1<:Function, Mu_minus_1<:Function, Chi_plus_1<:Function, Beta_plus_1<:Function, Mu_plus_1<:Function,
         Chi_minus_2<:Function, Beta_minus_2<:Function, Mu_minus_2<:Function, Chi_plus_2<:Function, Beta_plus_2<:Function, Mu_plus_2<:Function,
         U<:Function} <: Parabolic_problem
@@ -95,6 +116,70 @@ abstract type Problem end
         u0::U
     end
 
+
+    """
+    Третья краевая задача для двумерного квазилинейного уравнения теплопроводности со средоточенной теплоёмкостью
+    """
+    struct Heat2_quazilinear_3{K1<:Function, K2<:Function, F<:Function,
+        Chi_minus_1<:Function, Beta_minus_1<:Function, Mu_minus_1<:Function, Chi_plus_1<:Function, Beta_plus_1<:Function, Mu_plus_1<:Function,
+        Chi_minus_2<:Function, Beta_minus_2<:Function, Mu_minus_2<:Function, Chi_plus_2<:Function, Beta_plus_2<:Function, Mu_plus_2<:Function,
+        U<:Function} <: Parabolic_problem
+
+        k1::K1
+        k2::K2
+        f::F
+
+        chi_minus_1::Chi_minus_1
+        beta_minus_1::Beta_minus_1
+        mu_minus_1::Mu_minus_1
+        chi_plus_1::Chi_plus_1
+        beta_plus_1::Beta_plus_1
+        mu_plus_1::Mu_plus_1
+        
+        chi_minus_2::Chi_minus_2
+        beta_minus_2::Beta_minus_2
+        mu_minus_2::Mu_minus_2
+        chi_plus_2::Chi_plus_2
+        beta_plus_2::Beta_plus_2
+        mu_plus_2::Mu_plus_2
+
+        u0::U
+    end
+
+
+    """
+    Первая краевая задача для n-мерного линейного уравнения теплопроводности общего вида
+    """
+    struct NHeat_linear_const_1{C<:Function, K<:Function, R<:Function, Q<:Function, F<:Function, Mu_<:Function, Mu<:Function, U<:Function}
+        c::C
+        k::K
+        r::R
+        q::Q
+        f::F
+        mu_::Mu_
+        mu::Mu
+        u0::U
+    end
+
+
+    """
+    Смешанная краевая задача для n-мерного линейного уравнения теплопроводности общего вида со сосредоточенной теплоёмкостью
+    """
+    struct NHeat_linear_3{C<:Function, K<:Function, R<:Function, Q<:Function, F<:Function, Chi_<:Function, Chi<:Function, Beta_<:Function, Beta<:Function, Mu_<:Function, Mu<:Function, U<:Function}
+        c::C
+        k::K
+        r::R
+        q::Q
+        f::F
+        chi_::Chi_
+        chi::Chi
+        beta_::Beta_
+        beta::Beta
+        mu_::Mu_
+        mu::Mu
+        u0::U
+    end
+
 #-
 
 
@@ -103,6 +188,21 @@ abstract type Problem end
 """
 function initial_cond!(u::Matrix{Float64}, sys::Parabolic_problem, g::Grid1)
     @. u[:, 1] = sys.u0(g.x)
+end
+
+function initial_cond!(u::Array{Float64, 3}, sys::Parabolic_problem, g::Grid2)
+    for i = 1:g.N[1]
+        for j = 1:g.N[2]
+            u[i, j, 1] = sys.u0(g.x[1][i], g.x[2][j])
+        end
+    end
+end
+
+
+function initial_cond!(u, sys::Parabolic_problem, g::UniformTimeNGrid)
+    for idx in Iterators.product((1:g.g.N[i] for i = 1:g.g.dim)...)
+        u[idx..., 1] = sys.u0([g.g.x[j][idx[j]] for j = 1:g.g.dim])
+    end
 end
 
 
@@ -114,14 +214,6 @@ function boundary_cond_1!(u::Matrix{Float64}, sys::Parabolic_problem, g::Grid1)
     @. u[end, :] = sys.mu2(g.t)
 end
 
-
-function initial_cond!(u::Array{Float64, 3}, sys::Parabolic_problem, g::Grid2)
-    for i = 1:g.N[1]
-        for j = 1:g.N[2]
-            u[i, j, 1] = sys.u0(g.x[1][i], g.x[2][j])
-        end
-    end
-end
 
 
 function boundary_cond_1!(u::Array{Float64, 3}, sys::Parabolic_problem, g::Grid2)
@@ -141,7 +233,9 @@ function boundary_cond_1!(u::Array{Float64, 3}, sys::Parabolic_problem, g::Grid2
 end
 
 
+
 include("heat_linear_3.jl")
 include("heat_linear_const_1.jl")
 include("heat_quazilinear_1.jl")
 include("heat2_linear_const_1.jl")
+include("heat2_quazilinear_1.jl")
