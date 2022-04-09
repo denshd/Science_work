@@ -90,7 +90,7 @@ function loc_scheme!(u::Array{Float64, 3}, sys::Heat2_quazilinear_1, g::Grid2)
 
             # Создаём трёхдиагональную матрицу
             for i2 = 2 : g.N[2] - 1
-                A[2][i2 - 1] = -(1 / g.h[2]^2) * sys.k2(0.5 * (w[i1, i2] + w[i1, i2 + 1]))
+                A[2][i2 - 1] = -(1 / g.h[2]^2) * sys.k2(0.5 * (w[i1, i2] + w[i1, i2 - 1]))
                 B[2][i2] = 1 / g.τ + (1 / g.h[2]^2) * (
                     sys.k2(0.5 * (w[i1, i2] + w[i1, i2 - 1])) +
                     sys.k2(0.5 * (w[i1, i2 + 1] + w[i1, i2]))

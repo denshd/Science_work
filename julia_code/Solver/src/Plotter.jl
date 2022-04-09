@@ -36,34 +36,34 @@ function plot_gif(sol::Solution{<:Grid1};
 end
 
 
-function plot_gif(sol::Solution2{<:Grid2};
-    t1 = sol.g.t[1],
-    t2 = sol.g.t[2],
-    color="black",
-    number_of_frames = min(100, length(sol.g.t)),
-    fps = 30,
-    filename = "solution_3d.gif",
-    picture_size=(1280, 1024)
-    )
+# function plot_gif(sol::Solution2{<:Grid2};
+#     t1 = sol.g.t[1],
+#     t2 = sol.g.t[2],
+#     color="black",
+#     number_of_frames = min(100, length(sol.g.t)),
+#     fps = 30,
+#     filename = "solution_3d.gif",
+#     picture_size=(1280, 1024)
+#     )
 
-    time_step = div(length(sol.g.t), number_of_frames)
+#     time_step = div(length(sol.g.t), number_of_frames)
 
-    zlimits = (min(sol.u...), max(sol.u...))
+#     zlimits = (min(sol.u...), max(sol.u...))
 
-    anim = Animation()
-    for i = 1 : time_step : sol.g.Nt
-        p = plot(
-            sol.g.x[1], sol.g.x[2], sol.u[:, :, i],
-            st = :surface,
-            title=L"solution $u(x, t)$",
-            label="t=$(round(sol.g.t[i], digits=3))",
-            size=picture_size
-        )
-        frame(anim, p)
-    end
+#     anim = Animation()
+#     for i = 1 : time_step : sol.g.Nt
+#         p = plot(
+#             sol.g.x[1], sol.g.x[2], sol.u[:, :, i],
+#             st = :surface,
+#             title=L"solution $u(x, t)$",
+#             label="t=$(round(sol.g.t[i], digits=3))",
+#             size=picture_size
+#         )
+#         frame(anim, p)
+#     end
 
-    G = gif(anim, filename)
-end
+#     G = gif(anim, filename)
+# end
 
 
 function plot_heatmap_gif(sol::Solution2{<:Grid2};
@@ -85,7 +85,7 @@ function plot_heatmap_gif(sol::Solution2{<:Grid2};
 
     anim = Animation()
     for i = 1 : time_step : sol.g.Nt
-        heatmap(sol.g.x[1], sol.g.x[2], sol.u[:, :, i], c = :thermal, size=picture_size)
+        heatmap(sol.g.x[2], sol.g.x[1], sol.u[:, :, i], c = :thermal, size=picture_size)
         frame(anim)
     end
 
