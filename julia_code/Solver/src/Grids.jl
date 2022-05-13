@@ -115,6 +115,7 @@ abstract type Grid end
             new(N, Nt, (x1.step, x2.step), t.step, (x1, x2), t)
         end
 
+        # TODO: fix the problem (N isn't define)
         function UniformGrid_2(x_b::Tuple{Tuple{Real, Real}, Tuple{Real, Real}}, t_b::Tuple{Real, Real}, h::Tuple{Real, Real}, τ::Real)
             x1 = range(start=x_b[1][1], stop=x_b[1][2], step=h[1])
             x2 = range(start=x_b[2][1], stop=x_b[2][2], step=h[2])
