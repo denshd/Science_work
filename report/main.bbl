@@ -1,0 +1,142 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{ТихоновСамарский}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=a532866b52d54cfb64e3f7c931f26098}{%
+           family={Тихонов},
+           familyi={Т\bibinitperiod},
+           given={АН},
+           giveni={А\bibinitperiod}}}%
+        {{hash=b422edd393c3701b216ba09bfd70131e}{%
+           family={Самарский},
+           familyi={С\bibinitperiod},
+           given={АА},
+           giveni={А\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {М.: Наука}%
+      }
+      \strng{namehash}{981e532dd83c87d95a4b059ffd77fe8c}
+      \strng{fullhash}{981e532dd83c87d95a4b059ffd77fe8c}
+      \strng{bibnamehash}{981e532dd83c87d95a4b059ffd77fe8c}
+      \strng{authorbibnamehash}{981e532dd83c87d95a4b059ffd77fe8c}
+      \strng{authornamehash}{981e532dd83c87d95a4b059ffd77fe8c}
+      \strng{authorfullhash}{981e532dd83c87d95a4b059ffd77fe8c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Уравнения математической физики.--изд. 8-е, стереотипное}
+      \field{year}{2007}
+    \endentry
+    \entry{ЛандауГидродинамика}{article}{}
+      \name{author}{2}{}{%
+        {{hash=54ea4c666f4b35f60210b710e14764c7}{%
+           family={Ландау},
+           familyi={Л\bibinitperiod},
+           given={ЛД},
+           giveni={Л\bibinitperiod}}}%
+        {{hash=5ab72b41b403aac3073428e866abb8f9}{%
+           family={Лифшиц},
+           familyi={Л\bibinitperiod},
+           given={ЕМ},
+           giveni={Е\bibinitperiod}}}%
+      }
+      \strng{namehash}{ae366d6c2a754e18313027594d94c04e}
+      \strng{fullhash}{ae366d6c2a754e18313027594d94c04e}
+      \strng{bibnamehash}{ae366d6c2a754e18313027594d94c04e}
+      \strng{authorbibnamehash}{ae366d6c2a754e18313027594d94c04e}
+      \strng{authornamehash}{ae366d6c2a754e18313027594d94c04e}
+      \strng{authorfullhash}{ae366d6c2a754e18313027594d94c04e}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{М.: Физмат-лит}
+      \field{title}{Теоретическая физика: гидродинамика. 5-е изд., стереот}
+      \field{year}{2001}
+      \field{pages}{736}
+      \range{pages}{1}
+      \field{volume}{5}
+      \range{volume}{1}
+    \endentry
+    \entry{СамарскийТеорияРазностныхСхем}{book}{}
+      \name{author}{1}{}{%
+        {{hash=fb75383dbc8c7caf36f50a8fd2c28f63}{%
+           family={Самарский},
+           familyi={С\bibinitperiod},
+           given={Александр\bibnamedelima Андреевич},
+           giveni={А\bibinitperiod\bibinitdelim А\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {" Наука," Глав. ред. физико-математической лит-ры}%
+      }
+      \strng{namehash}{fb75383dbc8c7caf36f50a8fd2c28f63}
+      \strng{fullhash}{fb75383dbc8c7caf36f50a8fd2c28f63}
+      \strng{bibnamehash}{fb75383dbc8c7caf36f50a8fd2c28f63}
+      \strng{authorbibnamehash}{fb75383dbc8c7caf36f50a8fd2c28f63}
+      \strng{authornamehash}{fb75383dbc8c7caf36f50a8fd2c28f63}
+      \strng{authorfullhash}{fb75383dbc8c7caf36f50a8fd2c28f63}
+      \field{extraname}{1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Теория разностных схем}
+      \field{year}{1989}
+    \endentry
+    \entry{СамарскийНеравномерныеСетки}{article}{}
+      \name{author}{1}{}{%
+        {{hash=fb75383dbc8c7caf36f50a8fd2c28f63}{%
+           family={Самарский},
+           familyi={С\bibinitperiod},
+           given={Александр\bibnamedelima Андреевич},
+           giveni={А\bibinitperiod\bibinitdelim А\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Российская академия наук, Отделение математических наук}%
+      }
+      \strng{namehash}{fb75383dbc8c7caf36f50a8fd2c28f63}
+      \strng{fullhash}{fb75383dbc8c7caf36f50a8fd2c28f63}
+      \strng{bibnamehash}{fb75383dbc8c7caf36f50a8fd2c28f63}
+      \strng{authorbibnamehash}{fb75383dbc8c7caf36f50a8fd2c28f63}
+      \strng{authornamehash}{fb75383dbc8c7caf36f50a8fd2c28f63}
+      \strng{authorfullhash}{fb75383dbc8c7caf36f50a8fd2c28f63}
+      \field{extraname}{2}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Журнал вычислительной математики и математической физики}
+      \field{title}{Локально-одномерные разностные схемы на неравномерных сетках}
+      \field{year}{1963}
+      \field{number}{3}
+      \range{number}{1}
+      \field{pages}{431\bibrangedash 466}
+      \range{pages}{36}
+      \field{volume}{3}
+      \range{volume}{1}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

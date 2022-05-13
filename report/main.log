@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.8.26)  4 APR 2022 16:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.8.26)  14 MAY 2022 00:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -908,9 +908,289 @@ File: pgflibraryarrows.meta.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfarrowlength=\dimen334
 \pgfarrowwidth=\dimen335
 \pgfarrowlinewidth=\dimen336
-)) (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+) (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2020/12/31 v3.16 programmable bibliographies (PK/MW)
+ (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count333
+) (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count334
+ (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+)) (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@tabx@nest=\count335
+\c@listtotal=\count336
+\c@listcount=\count337
+\c@liststart=\count338
+\c@liststop=\count339
+\c@citecount=\count340
+\c@citetotal=\count341
+\c@multicitecount=\count342
+\c@multicitetotal=\count343
+\c@instcount=\count344
+\c@maxnames=\count345
+\c@minnames=\count346
+\c@maxitems=\count347
+\c@minitems=\count348
+\c@citecounter=\count349
+\c@maxcitecounter=\count350
+\c@savedcitecounter=\count351
+\c@uniquelist=\count352
+\c@uniquename=\count353
+\c@refsection=\count354
+\c@refsegment=\count355
+\c@maxextratitle=\count356
+\c@maxextratitleyear=\count357
+\c@maxextraname=\count358
+\c@maxextradate=\count359
+\c@maxextraalpha=\count360
+\c@abbrvpenalty=\count361
+\c@highnamepenalty=\count362
+\c@lownamepenalty=\count363
+\c@maxparens=\count364
+\c@parenlevel=\count365
+\blx@tempcnta=\count366
+\blx@tempcntb=\count367
+\blx@tempcntc=\count368
+\blx@maxsection=\count369
+\blx@maxsegment@0=\count370
+\blx@notetype=\count371
+\blx@parenlevel@text=\count372
+\blx@parenlevel@foot=\count373
+\blx@sectionciteorder@0=\count374
+\blx@entrysetcounter=\count375
+\blx@biblioinstance=\count376
+\labelnumberwidth=\skip70
+\labelalphawidth=\skip71
+\biblabelsep=\skip72
+\bibitemsep=\skip73
+\bibnamesep=\skip74
+\bibinitsep=\skip75
+\bibparsep=\skip76
+\bibhang=\skip77
+\blx@bcfin=\read4
+\blx@bcfout=\write4
+\blx@langwohyphens=\language88
+\c@mincomprange=\count377
+\c@maxcomprange=\count378
+\c@mincompwidth=\count379
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+ (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/biblatex/blx-dm.def
+File: blx-dm.def 2020/12/31 v3.16 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'gost-numeric.dbx' found.
+ (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/biblatex-gost/gost-numeric.dbx
+File: gost-numeric.dbx 2021/05/08 v1.22 biblatex-gost data model
+Package biblatex Info: Trying to load biblatex-gost data model...
+Package biblatex Info: ... file 'biblatex-gost.dbx' found.
+ (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/biblatex-gost/biblatex-gost.dbx
+File: biblatex-gost.dbx 2021/05/08 v1.22 biblatex-gost data model
+))
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count380
+\c@savedafterword=\count381
+\c@annotator=\count382
+\c@savedannotator=\count383
+\c@author=\count384
+\c@savedauthor=\count385
+\c@bookauthor=\count386
+\c@savedbookauthor=\count387
+\c@commentator=\count388
+\c@savedcommentator=\count389
+\c@editor=\count390
+\c@savededitor=\count391
+\c@editora=\count392
+\c@savededitora=\count393
+\c@editorb=\count394
+\c@savededitorb=\count395
+\c@editorc=\count396
+\c@savededitorc=\count397
+\c@foreword=\count398
+\c@savedforeword=\count399
+\c@holder=\count400
+\c@savedholder=\count401
+\c@introduction=\count402
+\c@savedintroduction=\count403
+\c@namea=\count404
+\c@savednamea=\count405
+\c@nameb=\count406
+\c@savednameb=\count407
+\c@namec=\count408
+\c@savednamec=\count409
+\c@translator=\count410
+\c@savedtranslator=\count411
+\c@shortauthor=\count412
+\c@savedshortauthor=\count413
+\c@shorteditor=\count414
+\c@savedshorteditor=\count415
+\c@booktranslator=\count416
+\c@savedbooktranslator=\count417
+\c@bookcommentator=\count418
+\c@savedbookcommentator=\count419
+\c@bookannotator=\count420
+\c@savedbookannotator=\count421
+\c@bookintroduction=\count422
+\c@savedbookintroduction=\count423
+\c@bookforeword=\count424
+\c@savedbookforeword=\count425
+\c@bookafterword=\count426
+\c@savedbookafterword=\count427
+\c@labelname=\count428
+\c@savedlabelname=\count429
+\c@institution=\count430
+\c@savedinstitution=\count431
+\c@lista=\count432
+\c@savedlista=\count433
+\c@listb=\count434
+\c@savedlistb=\count435
+\c@listc=\count436
+\c@savedlistc=\count437
+\c@listd=\count438
+\c@savedlistd=\count439
+\c@liste=\count440
+\c@savedliste=\count441
+\c@listf=\count442
+\c@savedlistf=\count443
+\c@location=\count444
+\c@savedlocation=\count445
+\c@organization=\count446
+\c@savedorganization=\count447
+\c@origlocation=\count448
+\c@savedoriglocation=\count449
+\c@origpublisher=\count450
+\c@savedorigpublisher=\count451
+\c@publisher=\count452
+\c@savedpublisher=\count453
+\c@language=\count454
+\c@savedlanguage=\count455
+\c@origlanguage=\count456
+\c@savedoriglanguage=\count457
+\c@bookoriglanguage=\count458
+\c@savedbookoriglanguage=\count459
+\c@specdata=\count460
+\c@savedspecdata=\count461
+\c@credits=\count462
+\c@savedcredits=\count463
+\c@bookcredits=\count464
+\c@savedbookcredits=\count465
+\c@editioncredits=\count466
+\c@savededitioncredits=\count467
+\c@pageref=\count468
+\c@savedpageref=\count469
+\shorthandwidth=\skip78
+\shortjournalwidth=\skip79
+\shortserieswidth=\skip80
+\shorttitlewidth=\skip81
+\shortauthorwidth=\skip82
+\shorteditorwidth=\skip83
+\locallabelnumberwidth=\skip84
+\locallabelalphawidth=\skip85
+\localshorthandwidth=\skip86
+\localshortjournalwidth=\skip87
+\localshortserieswidth=\skip88
+\localshorttitlewidth=\skip89
+\localshortauthorwidth=\skip90
+\localshorteditorwidth=\skip91
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+ (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+ (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
+\c@textcitecount=\count470
+\c@textcitetotal=\count471
+\c@textcitemaxnames=\count472
+\c@biburlbigbreakpenalty=\count473
+\c@biburlbreakpenalty=\count474
+\c@biburlnumpenalty=\count475
+\c@biburlucpenalty=\count476
+\c@biburllcpenalty=\count477
+\biburlbigskip=\muskip18
+\biburlnumskip=\muskip19
+\biburlucskip=\muskip20
+\biburllcskip=\muskip21
+\c@smartand=\count478
+)
+Package biblatex Info: Trying to load bibliography style 'gost-numeric'...
+Package biblatex Info: ... file 'gost-numeric.bbx' found.
+ (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/biblatex-gost/gost-numeric.bbx
+File: gost-numeric.bbx 2021/05/08 v1.22 biblatex-gost styles
+Package biblatex Info: Trying to load bibliography style 'gost-standard'...
+Package biblatex Info: ... file 'gost-standard.bbx' found.
+ (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/biblatex-gost/gost-standard.bbx
+File: gost-standard.bbx 2021/05/08 v1.22 biblatex-gost styles
+Package biblatex Info: Trying to load biblatex-gost generic definitions...
+Package biblatex Info: ... file 'biblatex-gost.def' found.
+ (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/biblatex-gost/biblatex-gost.def
+File: biblatex-gost.def 2021/05/08 v1.22 biblatex-gost styles
+)
+\c@blx@gost@pointer=\count479
+\c@bbx:relatedcount=\count480
+\c@bbx:relatedtotal=\count481
+Package biblatex Info: Redefining autocite command 'footnote'.
+Package biblatex Info: Redefining autocite command 'superscript'.
+))
+Package biblatex Info: Trying to load citation style 'gost-numeric'...
+Package biblatex Info: ... file 'gost-numeric.cbx' found.
+ (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/biblatex-gost/gost-numeric.cbx
+File: gost-numeric.cbx 2021/05/08 v1.22 biblatex-gost styles
+Package biblatex Info: Trying to load citation style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.cbx' found.
+ (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/biblatex/cbx/numeric-comp.cbx
+File: numeric-comp.cbx 2020/12/31 v3.16 biblatex citation style (PK/MW)
+\c@cbx@tempcnta=\count482
+\c@cbx@tempcntb=\count483
+\c@cbx@tempcntc=\count484
+\c@cbx@tempcntd=\count485
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+))
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+ (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+))) (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2021-02-22 v5.2l context-sensitive quotations (JAW)
+\csq@reset=\count486
+\csq@gtype=\count487
+\csq@glevel=\count488
+\csq@qlevel=\count489
+\csq@maxlvl=\count490
+\csq@tshold=\count491
+\csq@ltx@everypar=\toks57
+ (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2021-02-22 v5.2l csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+ (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+))
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'russian'.
+ (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-08-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count333
+\l__color_backend_stack_int=\count492
 \l__pdf_internal_box=\box73
 ) (./main.aux)
 \openout1 = `main.aux'.
@@ -938,17 +1218,17 @@ LaTeX Font Info:    ... okay on input line 5.
 LaTeX Info: Redefining \th on input line 5.
  (c:/MyPrograms/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count334
+\scratchcounter=\count493
 \scratchdimen=\dimen337
 \scratchbox=\box74
-\nofMPsegments=\count335
-\nofMParguments=\count336
-\everyMPshowfont=\toks57
-\MPscratchCnt=\count337
+\nofMPsegments=\count494
+\nofMParguments=\count495
+\everyMPshowfont=\toks58
+\MPscratchCnt=\count496
 \MPscratchDim=\dimen338
-\MPnumerator=\count338
-\makeMPintoPDFobject=\count339
-\everyMPtoPDFconversion=\toks58
+\MPnumerator=\count497
+\makeMPintoPDFobject=\count498
+\everyMPtoPDFconversion=\toks59
 ) (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -1005,21 +1285,72 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (c:/MyPrograms/texlive/2021/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count340
+\c@section@level=\count499
 )
 LaTeX Info: Redefining \ref on input line 5.
 LaTeX Info: Redefining \pageref on input line 5.
 LaTeX Info: Redefining \nameref on input line 5.
  (./main.out) (./main.out)
-\@outlinefile=\write4
-\openout4 = `main.out'.
+\@outlinefile=\write5
+\openout5 = `main.out'.
 
 
 Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.18} (current compat level: 1.15).
 
-(./titlepages/titlepage_1.tex
+Package biblatex Info: Trying to load language 'russian' -> 'russian-gost'...
+Package biblatex Info: ... file 'russian-gost.lbx' found.
+(c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/biblatex-gost/russian-gost.lbx
+File: russian-gost.lbx 2021/05/08 v1.22 biblatex-gost styles
+Package biblatex Info: Trying to load language 'russian'...
+Package biblatex Info: ... file 'russian.lbx' found.
+ (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/biblatex/lbx/russian.lbx
+File: russian.lbx 2020/12/31 v3.16 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load language 'russian'...
+Package biblatex Info: ... file 'russian.lbx' found.
+ (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/biblatex/lbx/russian.lbx
+File: russian.lbx 2020/12/31 v3.16 biblatex localization (PK/MW)
+))
+Package biblatex Info: Trying to load language 'english' -> 'english-gost'...
+Package biblatex Info: ... file 'english-gost.lbx' found.
+ (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/biblatex-gost/english-gost.lbx
+File: english-gost.lbx 2021/05/08 v1.22 biblatex-gost styles
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+ (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2020/12/31 v3.16 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+ (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2020/12/31 v3.16 biblatex localization (PK/MW)
+))
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Data encoding 'utf8' specified.
+(biblatex)             No need to reencode data.
+Package biblatex Info: Document encoding is UTF8 ....
+ (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2021-07-12 L3 programming layer (loader) 
+)
+Package biblatex Info: ... and expl3
+(biblatex)             2021-07-12 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+ (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2021-08-04 L3 Experimental document command parser
+)
+Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
+)
+\openout4 = `main.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'main.bbl' found.
+ (./main.bbl)
+Package biblatex Info: Reference section=0 on input line 5.
+Package biblatex Info: Reference segment=0 on input line 5.
+ (./titlepages/titlepage_1.tex
 \lbox=\box75
-\maxl=\skip70
+\maxl=\skip92
 
 Underfull \hbox (badness 10000) in paragraph at lines 47--47
 
@@ -1148,29 +1479,85 @@ l.39 \end{titlepage}
                    \relax 
 l.12     \newpage
                   [1] (./main.toc)
-\tf@toc=\write5
-\openout5 = `main.toc'.
+\tf@toc=\write6
+\openout6 = `main.toc'.
 
- [2] (./Р’РІРµРґРµРЅРёРµ/Р’РІРµРґРµРЅРёРµ.tex) [3] (./main.aux)
+ [2] (./Р’РІРµРґРµРЅРёРµ/Р’РІРµРґРµРЅРёРµ.tex
+LaTeX Font Info:    Trying to load font information for T2A+cmtt on input line 14.
+ (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/cyrillic/t2acmtt.fd
+File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
+)
+Overfull \hbox (40.15433pt too wide) in paragraph at lines 14--15
+[] \T2A/cmtt/m/n/12 Здесь написать про то, что в квазилинейном уравненнии не существует классического
+ []
+
+
+Overfull \hbox (4.00903pt too wide) in paragraph at lines 14--15
+\T2A/cmtt/m/n/12 решения, обобщјнные решения, разрывы, волновые фронты, ударные волны, все дела.
+ []
+
+
+Overfull \hbox (41.04999pt too wide) in paragraph at lines 14--15
+\T2A/cmtt/m/n/12 В статьях Самарского там показано это, тыры-пыры. А вот в газовой динамике так вообще
+ []
+
+
+Overfull \hbox (28.703pt too wide) in paragraph at lines 14--15
+\T2A/cmtt/m/n/12 жесть. И поэтмоу нужно измелчать, а там слишком мелко то нецелесообразно, все дела,
+ []
+
+
+Overfull \hbox (22.52951pt too wide) in paragraph at lines 14--15
+\T2A/cmtt/m/n/12 и вот начать вводить в адаптивные сетки, как это круто, они могут спасти ситуацию.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
+
+ []
+
+)
+Overfull \hbox (21.63385pt too wide) in paragraph at lines 18--21
+[] \T2A/cmtt/m/n/12 Дальше сформулировать цель работы, и кратко рассказать, в каких section'ах что
+ []
+
+(./РћСЃРЅРѕРІРЅС‹Рµ_РїРѕРЅСЏС‚РёСЏ_С‚РµРѕСЂРёРё_СЂР°Р·РЅРѕСЃС‚РЅС‹С…_СЃС…РµРј/РћСЃРЅРѕРІРЅС‹Рµ_РїРѕРЅСЏС‚РёСЏ_С‚РµРѕСЂРёРё_СЂР°Р·РЅРѕСЃС‚РЅС‹С…_СЃС…РµРј.tex [3]
+
+LaTeX Warning: Command \CYRSH invalid in math mode on input line 24.
+
+Missing character: There is no Ш in font cmr12!
+
+LaTeX Warning: Command \CYRSH invalid in math mode on input line 26.
+
+Missing character: There is no Ш in font cmr8!
+[4]) [5] [6]
+Overfull \hbox (9.7921pt too wide) in paragraph at lines 59--59
+[]\T2A/cmr/m/it/12 Самарский А. А. \T2A/cmr/m/n/12 Тео-рия раз-ност-ных схем. ^^V "На-у-ка,"Глав. ред. физико-математической
+ []
+
+[7] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: EA72CF7BB48B8A64324405FE21A5F8DD;107.
+(rerunfilecheck)             Checksum: A7A46A42BCC847CC425BE70CF419B461;3968.
+Package logreq Info: Writing requests to 'main.run.xml'.
+\openout1 = `main.run.xml'.
+
  ) 
 Here is how much of TeX's memory you used:
- 36552 strings out of 478542
- 828309 string characters out of 5848891
- 1237371 words of memory out of 5000000
- 53773 multiletter control sequences out of 15000+600000
- 418309 words of font info for 68 fonts, out of 8000000 for 9000
+ 45512 strings out of 478542
+ 1009453 string characters out of 5848891
+ 2043386 words of memory out of 5000000
+ 62605 multiletter control sequences out of 15000+600000
+ 421113 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,5n,97p,772b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/MyPrograms/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}<c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfcc1728.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfxc1200.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfxc1728.pfb>
-Output written on main.pdf (5 pages, 90275 bytes).
+ 99i,8n,97p,1194b,2965s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/MyPrograms/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}<c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfcc1728.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfxc1200.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfxc1728.pfb>
+Output written on main.pdf (9 pages, 280220 bytes).
 PDF statistics:
- 74 PDF objects out of 1000 (max. 8388607)
- 54 compressed objects within 1 object stream
- 7 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 221 PDF objects out of 1000 (max. 8388607)
+ 181 compressed objects within 2 object streams
+ 28 named destinations out of 1000 (max. 500000)
+ 145 words of extra memory for PDF output out of 10000 (max. 10000000)
 

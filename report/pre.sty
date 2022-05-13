@@ -25,7 +25,7 @@
     %\frenchspacing                                             % отмена доп. пробела после точки --- конца предложения
 \fi
 
-
+\usepackage{mathtext}
 
 
 %%% Работа с картинками
@@ -180,7 +180,7 @@
 \DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
 
 
-
+\newcommand{\der}[2]{\frac{\partial #1}{\partial #2}}
 
 
 %%% Создание новых "теорем", свои теоремы
@@ -236,3 +236,10 @@
 %\usepackage[most]{tcolorbox} % для управления цветом
 %\pagecolor{black}
 %\color{white}
+
+
+\bibliographystyle{gost2008s.bst}
+\usepackage[backend=biber, bibencoding=utf8,  style=gost-numeric, sorting=none]{biblatex}
+\addbibresource{bibliography.bib}
+
+\usepackage{csquotes}
