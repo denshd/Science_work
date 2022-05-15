@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.8.26)  14 MAY 2022 00:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.8.26)  15 MAY 2022 19:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -8,8 +8,8 @@ entering extended mode
 LaTeX2e <2021-06-01> patch level 1
 L3 programming layer <2021-07-12> (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/02/12 v1.4n Standard LaTeX document class
-(c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2021/02/12 v1.4n Standard LaTeX file (size option)
+(c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2021/02/12 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count182
 \c@section=\count183
@@ -415,6 +415,15 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ) (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/xcolor/svgnam.def
 File: svgnam.def 2016/05/11 v2.12 Predefined colors according to SVG 1.1 (UK)
+)) (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/extsizes/extsizes.sty
+Package: extsizes 1996/10/08 v1.0 Non Standard LaTeX Package
+
+
+Package ExtSizes Warning: It is better to use one of the extsizes classes,
+ if you can.
+
+(c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/extsizes/size14.clo
+File: size14.clo 1999/11/11 v1.4a NON-Standard LaTeX file (size option)
 )) (c:/MyPrograms/texlive/2021/texmf-dist/tex/generic/soul/soul.sty
 Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
 \SOUL@word=\toks24
@@ -1259,15 +1268,15 @@ Package caption Info: End \AtBeginDocument code.
 * \textheight=731.23584pt
 * \oddsidemargin=13.08827pt
 * \evensidemargin=13.08827pt
-* \topmargin=-52.36449pt
-* \headheight=12.0pt
+* \topmargin=-54.36449pt
+* \headheight=14.0pt
 * \headsep=25.0pt
-* \topskip=12.0pt
+* \topskip=14.0pt
 * \footskip=30.0pt
-* \marginparwidth=35.0pt
+* \marginparwidth=15.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \skip\footins=12.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -1345,7 +1354,13 @@ Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (./main.bbl)
+ (./main.bbl
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'Р“Р°Р»Р°РєС‚РёРѕРЅРѕРІРљРІР°Р·РёР»РёРЅРµР№РЅРѕРµ':
+(biblatex)                - Range field 'number' in entry 'Р“Р°Р»Р°РєС‚РёРѕРЅРѕРІРљРІР°Р·РёР»РёРЅРµР№РЅРѕРµ' is malformed, falling back to literal.
+
+)
 Package biblatex Info: Reference section=0 on input line 5.
 Package biblatex Info: Reference segment=0 on input line 5.
  (./titlepages/titlepage_1.tex
@@ -1401,11 +1416,11 @@ File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 LaTeX Font Warning: Font shape `OML/cmr/m/up' undefined
 (Font)              using `OML/cmr/m/it' instead on input line 47.
 
-LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <12> not available
+LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <14.4> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 47.
-LaTeX Font Info:    Font shape `OML/cmr/m/up' in size <8> not available
+LaTeX Font Info:    Font shape `OML/cmr/m/up' in size <10> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 47.
-LaTeX Font Info:    Font shape `OML/cmr/m/up' in size <6> not available
+LaTeX Font Info:    Font shape `OML/cmr/m/up' in size <7> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 47.
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 47.
 (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/base/omscmr.fd
@@ -1415,11 +1430,11 @@ File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 LaTeX Font Warning: Font shape `OMS/cmr/m/up' undefined
 (Font)              using `OMS/cmr/m/n' instead on input line 47.
 
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <14.4> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 47.
-LaTeX Font Info:    Font shape `OMS/cmr/m/up' in size <8> not available
+LaTeX Font Info:    Font shape `OMS/cmr/m/up' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 47.
-LaTeX Font Info:    Font shape `OMS/cmr/m/up' in size <6> not available
+LaTeX Font Info:    Font shape `OMS/cmr/m/up' in size <7> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 47.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 47.
 (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1482,60 +1497,31 @@ l.12     \newpage
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
- [2] (./Р’РІРµРґРµРЅРёРµ/Р’РІРµРґРµРЅРёРµ.tex
-LaTeX Font Info:    Trying to load font information for T2A+cmtt on input line 14.
- (c:/MyPrograms/texlive/2021/texmf-dist/tex/latex/cyrillic/t2acmtt.fd
-File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
-)
-Overfull \hbox (40.15433pt too wide) in paragraph at lines 14--15
-[] \T2A/cmtt/m/n/12 Здесь написать про то, что в квазилинейном уравненнии не существует классического
+ [2] (./Р’РІРµРґРµРЅРёРµ/Р’РІРµРґРµРЅРёРµ.tex [3]
+Overfull \hbox (30.22345pt too wide) in paragraph at lines 37--43
+\T2A/cmr/m/n/14.4 ны-ми осо-бен-но-стя-ми раз-ра-ба-ты-ва-лись спе-ци-аль-ные ме-то-ды \T2A/cmr/m/it/14.4 локально-адаптивных
  []
 
+[4]) [5] (./РћСЃРЅРѕРІРЅС‹Рµ_РїРѕРЅСЏС‚РёСЏ_С‚РµРѕСЂРёРё_СЂР°Р·РЅРѕСЃС‚РЅС‹С…_СЃС…РµРј/РћСЃРЅРѕРІРЅС‹Рµ_РїРѕРЅСЏС‚РёСЏ_С‚РµРѕСЂРёРё_СЂР°Р·РЅРѕСЃС‚РЅС‹С…_СЃС…РµРј.tex [6]
 
-Overfull \hbox (4.00903pt too wide) in paragraph at lines 14--15
-\T2A/cmtt/m/n/12 решения, обобщјнные решения, разрывы, волновые фронты, ударные волны, все дела.
- []
-
-
-Overfull \hbox (41.04999pt too wide) in paragraph at lines 14--15
-\T2A/cmtt/m/n/12 В статьях Самарского там показано это, тыры-пыры. А вот в газовой динамике так вообще
- []
-
-
-Overfull \hbox (28.703pt too wide) in paragraph at lines 14--15
-\T2A/cmtt/m/n/12 жесть. И поэтмоу нужно измелчать, а там слишком мелко то нецелесообразно, все дела,
- []
-
-
-Overfull \hbox (22.52951pt too wide) in paragraph at lines 14--15
-\T2A/cmtt/m/n/12 и вот начать вводить в адаптивные сетки, как это круто, они могут спасти ситуацию.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 14--15
-
- []
-
-)
-Overfull \hbox (21.63385pt too wide) in paragraph at lines 18--21
-[] \T2A/cmtt/m/n/12 Дальше сформулировать цель работы, и кратко рассказать, в каких section'ах что
- []
-
-(./РћСЃРЅРѕРІРЅС‹Рµ_РїРѕРЅСЏС‚РёСЏ_С‚РµРѕСЂРёРё_СЂР°Р·РЅРѕСЃС‚РЅС‹С…_СЃС…РµРј/РћСЃРЅРѕРІРЅС‹Рµ_РїРѕРЅСЏС‚РёСЏ_С‚РµРѕСЂРёРё_СЂР°Р·РЅРѕСЃС‚РЅС‹С…_СЃС…РµРј.tex [3]
-
-LaTeX Warning: Command \CYRSH invalid in math mode on input line 24.
+LaTeX Warning: Command \CYRSH invalid in math mode on input line 46.
 
 Missing character: There is no Ш in font cmr12!
 
-LaTeX Warning: Command \CYRSH invalid in math mode on input line 26.
+LaTeX Warning: Command \CYRSH invalid in math mode on input line 48.
 
-Missing character: There is no Ш in font cmr8!
-[4]) [5] [6]
-Overfull \hbox (9.7921pt too wide) in paragraph at lines 59--59
-[]\T2A/cmr/m/it/12 Самарский А. А. \T2A/cmr/m/n/12 Тео-рия раз-ност-ных схем. ^^V "На-у-ка,"Глав. ред. физико-математической
+Missing character: There is no Ш in font cmr10!
+[7] [8]) [9]
+Overfull \hbox (40.07445pt too wide) in paragraph at lines 59--59
+[]\T2A/cmr/m/it/14.4 Berger M. \T2A/cmr/m/n/14.4 Adaptive mesh refinement for hyperbolic partial differential equations[Ph.
  []
 
-[7] (./main.aux)
+[10]
+Overfull \hbox (40.90968pt too wide) in paragraph at lines 59--59
+[]\T2A/cmr/m/it/14.4 Berger M. J.\T2A/cmr/m/n/14.4 , \T2A/cmr/m/it/14.4 Colella P. \T2A/cmr/m/n/14.4 Local adaptive mesh refinement for shock hydrodynamics []
+ []
+
+[11] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1546,18 +1532,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45512 strings out of 478542
- 1009453 string characters out of 5848891
- 2043386 words of memory out of 5000000
- 62605 multiletter control sequences out of 15000+600000
- 421113 words of font info for 72 fonts, out of 8000000 for 9000
+ 45561 strings out of 478542
+ 1013361 string characters out of 5848891
+ 2042804 words of memory out of 5000000
+ 62645 multiletter control sequences out of 15000+600000
+ 418813 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,8n,97p,1194b,2965s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/MyPrograms/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}<c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfcc1728.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfxc1200.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfxc1728.pfb>
-Output written on main.pdf (9 pages, 280220 bytes).
+{c:/MyPrograms/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}{c:/MyPrograms/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfcc2074.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfxc1440.pfb><c:/MyPrograms/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfxc2074.pfb>
+Output written on main.pdf (13 pages, 276831 bytes).
 PDF statistics:
- 221 PDF objects out of 1000 (max. 8388607)
- 181 compressed objects within 2 object streams
- 28 named destinations out of 1000 (max. 500000)
+ 265 PDF objects out of 1000 (max. 8388607)
+ 220 compressed objects within 3 object streams
+ 41 named destinations out of 1000 (max. 500000)
  145 words of extra memory for PDF output out of 10000 (max. 10000000)
 

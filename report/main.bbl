@@ -79,6 +79,54 @@
       \field{volume}{5}
       \range{volume}{1}
     \endentry
+    \entry{ГалактионовКвазилинейное}{article}{useauthor=false}
+      \name{author}{5}{}{%
+        {{hash=ec25fbc877da04ee55139d1eb019759d}{%
+           family={Галактионов},
+           familyi={Г\bibinitperiod},
+           given={Виктор\bibnamedelima Александрович},
+           giveni={В\bibinitperiod\bibinitdelim А\bibinitperiod}}}%
+        {{hash=a382711a853e2724de7f25521078edac}{%
+           family={Дородницын},
+           familyi={Д\bibinitperiod},
+           given={Владимир\bibnamedelima Анатольевич},
+           giveni={В\bibinitperiod\bibinitdelim А\bibinitperiod}}}%
+        {{hash=e97b3ed869ff8876c5defbe928806482}{%
+           family={Еленин},
+           familyi={Е\bibinitperiod},
+           given={Георгий\bibnamedelima Георгиевич},
+           giveni={Г\bibinitperiod\bibinitdelim Г\bibinitperiod}}}%
+        {{hash=7476a0461c6c2a35073e2b0e14946a11}{%
+           family={Курдюмов},
+           familyi={К\bibinitperiod},
+           given={Сергей\bibnamedelima Павлович},
+           giveni={С\bibinitperiod\bibinitdelim П\bibinitperiod}}}%
+        {{hash=fb75383dbc8c7caf36f50a8fd2c28f63}{%
+           family={Самарский},
+           familyi={С\bibinitperiod},
+           given={Александр\bibnamedelima Андреевич},
+           giveni={А\bibinitperiod\bibinitdelim А\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ВИНИТИ РАН--Всероссийский институт научной и технической информации РАН}%
+      }
+      \strng{authorbibnamehash}{3d763ce582740a2d04e041a978796057}
+      \strng{authornamehash}{3d763ce582740a2d04e041a978796057}
+      \strng{authorfullhash}{06042f1c5451fe59aefb9b92e79ddc2e}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Итоги науки и техники. Серия {«}Современные проблемы математики. Новейшие достижения{»}}
+      \field{title}{Квазилинейное уравнение теплопроводности с источником: обострение, локализация, симметрия, точные решения, асимптотики, структуры}
+      \field{year}{1986}
+      \field{number}{0}
+      \range{number}{-1}
+      \field{pages}{95\bibrangedash 205}
+      \range{pages}{111}
+      \field{volume}{28}
+      \range{volume}{1}
+      \warn{\item Range field 'number' in entry 'ГалактионовКвазилинейное' is malformed, falling back to literal}
+    \endentry
     \entry{СамарскийТеорияРазностныхСхем}{book}{}
       \name{author}{1}{}{%
         {{hash=fb75383dbc8c7caf36f50a8fd2c28f63}{%
@@ -97,8 +145,8 @@
       \strng{authornamehash}{fb75383dbc8c7caf36f50a8fd2c28f63}
       \strng{authorfullhash}{fb75383dbc8c7caf36f50a8fd2c28f63}
       \field{extraname}{1}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Теория разностных схем}
@@ -122,8 +170,8 @@
       \strng{authornamehash}{fb75383dbc8c7caf36f50a8fd2c28f63}
       \strng{authorfullhash}{fb75383dbc8c7caf36f50a8fd2c28f63}
       \field{extraname}{2}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Журнал вычислительной математики и математической физики}
@@ -134,6 +182,269 @@
       \field{pages}{431\bibrangedash 466}
       \range{pages}{36}
       \field{volume}{3}
+      \range{volume}{1}
+    \endentry
+    \entry{ЗельдовичРазрывы}{article}{}
+      \name{author}{2}{}{%
+        {{hash=1520f297b7195f6f925fe3327cb98585}{%
+           family={Зельдович},
+           familyi={З\bibinitperiod},
+           given={ЯБ},
+           giveni={Я\bibinitperiod}}}%
+        {{hash=912614ebce58ea5f5f0781d649ee0a82}{%
+           family={Компанеец},
+           familyi={К\bibinitperiod},
+           given={АС},
+           giveni={А\bibinitperiod}}}%
+      }
+      \strng{namehash}{a724da3db84830f177673d7fe3fdb95f}
+      \strng{fullhash}{a724da3db84830f177673d7fe3fdb95f}
+      \strng{bibnamehash}{a724da3db84830f177673d7fe3fdb95f}
+      \strng{authorbibnamehash}{a724da3db84830f177673d7fe3fdb95f}
+      \strng{authornamehash}{a724da3db84830f177673d7fe3fdb95f}
+      \strng{authorfullhash}{a724da3db84830f177673d7fe3fdb95f}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Сборник, посвященный}
+      \field{title}{К теории распространения тепла при теплопроводности, зависящей от температуры}
+      \field{year}{1950}
+      \field{pages}{61\bibrangedash 71}
+      \range{pages}{11}
+      \field{volume}{70}
+      \range{volume}{1}
+    \endentry
+    \entry{ЕщёРазрывы}{article}{}
+      \name{author}{1}{}{%
+        {{hash=0e46dada7c41a05e29d7839fb83b2c85}{%
+           family={Баренблатт},
+           familyi={Б\bibinitperiod},
+           given={ГИ},
+           giveni={Г\bibinitperiod}}}%
+      }
+      \strng{namehash}{0e46dada7c41a05e29d7839fb83b2c85}
+      \strng{fullhash}{0e46dada7c41a05e29d7839fb83b2c85}
+      \strng{bibnamehash}{0e46dada7c41a05e29d7839fb83b2c85}
+      \strng{authorbibnamehash}{0e46dada7c41a05e29d7839fb83b2c85}
+      \strng{authornamehash}{0e46dada7c41a05e29d7839fb83b2c85}
+      \strng{authorfullhash}{0e46dada7c41a05e29d7839fb83b2c85}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Прикл. матем. и мех.—1952.—16}
+      \field{title}{О некоторых неустановившихся движениях жидкости и газа в пористой среде}
+      \field{year}{1952}
+      \field{number}{1}
+      \range{number}{1}
+      \field{pages}{67\bibrangedash 78}
+      \range{pages}{12}
+    \endentry
+    \entry{ЕщёЕщёРазрывы}{article}{}
+      \name{author}{2}{}{%
+        {{hash=0e46dada7c41a05e29d7839fb83b2c85}{%
+           family={Баренблатт},
+           familyi={Б\bibinitperiod},
+           given={ГИ},
+           giveni={Г\bibinitperiod}}}%
+        {{hash=f15c88b3a2c0c36ec4c0b7008f7af4fc}{%
+           family={Вишик},
+           familyi={В\bibinitperiod},
+           given={МИ},
+           giveni={М\bibinitperiod}}}%
+      }
+      \strng{namehash}{e22107abe7d829553bdf131cbc98c50e}
+      \strng{fullhash}{e22107abe7d829553bdf131cbc98c50e}
+      \strng{bibnamehash}{e22107abe7d829553bdf131cbc98c50e}
+      \strng{authorbibnamehash}{e22107abe7d829553bdf131cbc98c50e}
+      \strng{authornamehash}{e22107abe7d829553bdf131cbc98c50e}
+      \strng{authorfullhash}{e22107abe7d829553bdf131cbc98c50e}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Прикладная математика и механика}
+      \field{title}{О конечной скорости распространения в задачах нестационарной фильтрации жидкости и газа}
+      \field{year}{1956}
+      \field{number}{3}
+      \range{number}{1}
+      \field{pages}{411\bibrangedash 417}
+      \range{pages}{7}
+      \field{volume}{20}
+      \range{volume}{1}
+    \endentry
+    \entry{АфендиковЛАД}{book}{useauthor=false}
+      \name{author}{4}{}{%
+        {{hash=f053b75b2d0bd60daf1856561d552f7c}{%
+           family={Афендиков},
+           familyi={А\bibinitperiod},
+           given={АЛ},
+           giveni={А\bibinitperiod}}}%
+        {{hash=3db480a970acb8ce26abbf60e3849a3f}{%
+           family={Меньшов},
+           familyi={М\bibinitperiod},
+           given={ИС},
+           giveni={И\bibinitperiod}}}%
+        {{hash=17639e77fda8ac70bf2c8be74b70b43d}{%
+           family={КД},
+           familyi={К\bibinitperiod},
+           given={Меркулов},
+           giveni={М\bibinitperiod}}}%
+        {{hash=b41b27b1a6be6e12537256b33047188a}{%
+           family={Павлухин},
+           familyi={П\bibinitperiod},
+           given={ПВ},
+           giveni={П\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {"Российская академиня наук"}%
+      }
+      \strng{authorbibnamehash}{6c68218d1d2293ad9cc709e2adffe0a0}
+      \strng{authornamehash}{6c68218d1d2293ad9cc709e2adffe0a0}
+      \strng{authorfullhash}{64b705e34545b3d339f66b16a019bb43}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labeltitlesource}{title}
+      \field{title}{Метод адаптивных декартовых сеток для решения задач газовой динамики}
+      \field{year}{2017}
+    \endentry
+    \entry{СамарскийАдаптивные}{article}{}
+      \name{author}{3}{}{%
+        {{hash=e3254eafa8e2528d0539019b969cdfb3}{%
+           family={Дарьин},
+           familyi={Д\bibinitperiod},
+           given={Николай\bibnamedelima Александрович},
+           giveni={Н\bibinitperiod\bibinitdelim А\bibinitperiod}}}%
+        {{hash=bbf54514c14a5fe2605dfe0933131c77}{%
+           family={Мажукин},
+           familyi={М\bibinitperiod},
+           given={Владимир\bibnamedelima Иванович},
+           giveni={В\bibinitperiod\bibinitdelim И\bibinitperiod}}}%
+        {{hash=fb75383dbc8c7caf36f50a8fd2c28f63}{%
+           family={Самарский},
+           familyi={С\bibinitperiod},
+           given={Александр\bibnamedelima Андреевич},
+           giveni={А\bibinitperiod\bibinitdelim А\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Российская академия наук, Отделение математических наук}%
+      }
+      \strng{namehash}{df65a88a9599e52ea1d82fca592a8ffd}
+      \strng{fullhash}{df65a88a9599e52ea1d82fca592a8ffd}
+      \strng{bibnamehash}{df65a88a9599e52ea1d82fca592a8ffd}
+      \strng{authorbibnamehash}{df65a88a9599e52ea1d82fca592a8ffd}
+      \strng{authornamehash}{df65a88a9599e52ea1d82fca592a8ffd}
+      \strng{authorfullhash}{df65a88a9599e52ea1d82fca592a8ffd}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Журнал вычислительной математики и математической физики}
+      \field{title}{Конечно-разностный метод решения уравнений газовой динамики с использованием адаптивных сеток, динамически связанных с решением}
+      \field{year}{1988}
+      \field{number}{8}
+      \range{number}{1}
+      \field{pages}{1210\bibrangedash 1225}
+      \range{pages}{16}
+      \field{volume}{28}
+      \range{volume}{1}
+    \endentry
+    \entry{berger1982adaptive}{article}{}
+      \name{author}{1}{}{%
+        {{hash=00b1a7d674f6b696681df62ee4078dc7}{%
+           family={Berger},
+           familyi={B\bibinitperiod},
+           given={MJ},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{00b1a7d674f6b696681df62ee4078dc7}
+      \strng{fullhash}{00b1a7d674f6b696681df62ee4078dc7}
+      \strng{bibnamehash}{00b1a7d674f6b696681df62ee4078dc7}
+      \strng{authorbibnamehash}{00b1a7d674f6b696681df62ee4078dc7}
+      \strng{authornamehash}{00b1a7d674f6b696681df62ee4078dc7}
+      \strng{authorfullhash}{00b1a7d674f6b696681df62ee4078dc7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Adaptive mesh refinement for hyperbolic partial differential equations[Ph. D. Thesis]}
+      \field{year}{1982}
+    \endentry
+    \entry{berger1989local}{article}{}
+      \name{author}{2}{}{%
+        {{hash=e9fa0880d7695c7bf3335d37a6080c0f}{%
+           family={Berger},
+           familyi={B\bibinitperiod},
+           given={Marsha\bibnamedelima J},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=c41785440d0a194370dd86cca9827c37}{%
+           family={Colella},
+           familyi={C\bibinitperiod},
+           given={Phillip},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{c61de2a969d0516a94259e80f4b936d6}
+      \strng{fullhash}{c61de2a969d0516a94259e80f4b936d6}
+      \strng{bibnamehash}{c61de2a969d0516a94259e80f4b936d6}
+      \strng{authorbibnamehash}{c61de2a969d0516a94259e80f4b936d6}
+      \strng{authornamehash}{c61de2a969d0516a94259e80f4b936d6}
+      \strng{authorfullhash}{c61de2a969d0516a94259e80f4b936d6}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of computational Physics}
+      \field{title}{Local adaptive mesh refinement for shock hydrodynamics}
+      \field{year}{1989}
+      \field{number}{1}
+      \range{number}{1}
+      \field{pages}{64\bibrangedash 84}
+      \range{pages}{21}
+      \field{volume}{82}
+      \range{volume}{1}
+    \endentry
+    \entry{шхануков2013локально}{article}{useauthor=false}
+      \name{author}{4}{}{%
+        {{hash=a2ca5ab2af807f3360d51b09e925cd48}{%
+           family={Шхануков-Лафишев},
+           familyi={Ш\bibinithyphendelim Л\bibinitperiod},
+           given={Мухамед\bibnamedelima Хабалович},
+           giveni={М\bibinitperiod\bibinitdelim Х\bibinitperiod}}}%
+        {{hash=532b0d717d3b213cc6daae32cbc89e11}{%
+           family={Лафишева},
+           familyi={Л\bibinitperiod},
+           given={Мадина\bibnamedelima Мухамедовна},
+           giveni={М\bibinitperiod\bibinitdelim М\bibinitperiod}}}%
+        {{hash=68adb813c533b2523b1c742fc0411fa7}{%
+           family={Нахушева},
+           familyi={Н\bibinitperiod},
+           given={Фатима\bibnamedelima Мухамедовна},
+           giveni={Ф\bibinitperiod\bibinitdelim М\bibinitperiod}}}%
+        {{hash=17e8e76c59c45d44a8e911e242887ad9}{%
+           family={Мамбетова},
+           familyi={М\bibinitperiod},
+           given={Альбина\bibnamedelima Борисовна},
+           giveni={А\bibinitperiod\bibinitdelim Б\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Федеральное государственное бюджетное учреждение науки Южный математический~…}%
+      }
+      \strng{authorbibnamehash}{48086b1a495baaae1f1889c04928b9b2}
+      \strng{authornamehash}{48086b1a495baaae1f1889c04928b9b2}
+      \strng{authorfullhash}{ca5c64f2802814242e815ba80c6d5717}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Владикавказский математический журнал}
+      \field{title}{Локально-одномерная схема для уравнения теплопроводности с сосредоточенной теплоемкостью}
+      \field{year}{2013}
+      \field{number}{4}
+      \range{number}{1}
+      \field{volume}{15}
       \range{volume}{1}
     \endentry
   \enddatalist

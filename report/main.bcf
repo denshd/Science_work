@@ -3481,8 +3481,18 @@
   <bcf:section number="0">
     <bcf:citekey order="1">ТихоновСамарский</bcf:citekey>
     <bcf:citekey order="1">ЛандауГидродинамика</bcf:citekey>
-    <bcf:citekey order="2">СамарскийТеорияРазностныхСхем</bcf:citekey>
-    <bcf:citekey order="3">СамарскийНеравномерныеСетки</bcf:citekey>
+    <bcf:citekey order="2">ГалактионовКвазилинейное</bcf:citekey>
+    <bcf:citekey order="3">СамарскийТеорияРазностныхСхем</bcf:citekey>
+    <bcf:citekey order="4">СамарскийНеравномерныеСетки</bcf:citekey>
+    <bcf:citekey order="5">ЗельдовичРазрывы</bcf:citekey>
+    <bcf:citekey order="5">ЕщёРазрывы</bcf:citekey>
+    <bcf:citekey order="6">ЕщёЕщёРазрывы</bcf:citekey>
+    <bcf:citekey order="7">СамарскийТеорияРазностныхСхем</bcf:citekey>
+    <bcf:citekey order="8">АфендиковЛАД</bcf:citekey>
+    <bcf:citekey order="9">СамарскийАдаптивные</bcf:citekey>
+    <bcf:citekey order="10">berger1982adaptive</bcf:citekey>
+    <bcf:citekey order="10">berger1989local</bcf:citekey>
+    <bcf:citekey order="11">шхануков2013локально</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
