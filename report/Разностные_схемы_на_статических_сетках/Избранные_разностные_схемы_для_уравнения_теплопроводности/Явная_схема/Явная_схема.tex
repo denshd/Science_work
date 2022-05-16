@@ -1,0 +1,45 @@
+\begin{figure}
+    \centering
+        \begin{tikzpicture}
+            \filldraw[black] (0, 0) circle(2pt) node[anchor=south west] {$(x_i, t_j)$};
+            \draw (-2.5, 0) node[anchor=north] {$(x_{i - 1}, t_j)$} -- (2.5, 0) node[anchor=north] {$(x_{i + 1}, t_j)$};
+            \filldraw[black] (-2.5, 0) circle(2pt);
+            \filldraw[black] (2.5, 0) circle(2pt);
+            \filldraw[black] (0, 2.5) circle(2pt);
+            \draw (0, 0) -- (0, 2.5) node[anchor=south]{$(x_i, t_{j + 1})$};
+        \end{tikzpicture}
+    \caption{Пятиточечный шаблон явной схемы}
+    \label{fig:ExplicitTemplate}
+\end{figure}
+Шаблон явной схемы нагляден в одномерном случае (\seefigref{fig:ExplicitTemplate}):
+\begin{equation*}
+    L = \frac{\partial u}{\partial t} - \Delta u \mapsto 
+    L_{h\tau} = \frac{u_i^{j + 1} - u_i^j}{\tau} - 
+    \frac{u_{i + 1}^j - 2u_i^j + u_i^j}{h^2} + \phi_i^j,\quad \phi_i^j = f(x_i, t_j)
+\end{equation*}
+В многомерном случае:
+\begin{multline*}
+    L \mapsto 
+    \frac{u_i^{j + 1} - u_i^j}{\tau} + \sum\limits_{k = 1}^{n}
+    \frac{u_{i+}^j - 2u_i^j + u_{i-}^j}{h_k^2} + \phi_i^j,\text{ где }\\
+    i_{\pm} = (i_1, \ldots, i_{k - 1}, i_k \pm 1, i_{k + 1}, \ldots, i_n)
+\end{multline*}
+Откуда видно, что значение функции на $(j + 1)$--ом временном слое явно выражается через значения функции на $j$--ом временном слое:
+\begin{equation*}
+    u_i^{j} = u_i^j + \tau \sum\limits_{k = 1}^{n}
+    \frac{u_{i+}^j - 2u_i^j + u_{i-}^j}{h_k^2} + \phi_i^j
+\end{equation*}
+(отсюда и название схемы). Значения функции на 1--ом временном слое следуют из начальных условий: $u_i^1 = u_0(x_i)$, а граничные услвоия дают замкнутую систему уравнений:
+\begin{equation*}
+    \begin{cases}
+        u_i^{j} = u_i^j + \tau \sum\limits_{k = 1}^{n} \frac{u_{i+}^j - 2u_i^j + u_{i-}^j}{h_k^2} + \phi_i^j, & i_k = 2, \ldots, N_k - 1\\
+        u_i^1 = u_0(x_i), & i_k = 1, \ldots, N_k\\
+        u_{i_k}^{j} = \mu_{-\alpha}(x_i, t_j), & i_{k \ne \alpha} = 1, \ldots, N_k;\,\, i_{\alpha} = 0\\
+        u_{i_k}^{j} = \mu_{+\alpha}(x_i, t_j), & i_{k \ne \alpha} = 1, \ldots, N_k;\,\, i_{\alpha} = N_{\alpha}
+    \end{cases}
+\end{equation*}
+Как уже отмечалось, главные преимущества явной схемы~--- простота реализации, скорость счёта $O(N^n)$ и возможность распараллеливания программы (независимость расчёта $u_i^j$ для разных $i$).
+Однако у таких схем есть существенный недостаток~--- схема устойчива и сходится к решению лишь при условии
+$
+\tau \le \frac{h^2}{2n}
+$.

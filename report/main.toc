@@ -7,24 +7,24 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3}Разностные схемы на статических сетках}{9}{section.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1}Избранные разностные схемы для уравнения теплопроводности}{9}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.1}Избранные разностные схемы для уравнения теплопроводности}{10}{subsection.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.1.1}Явная схема}{9}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Явная схема}{10}{subsubsection.3.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.1.2}Однопараметрическое семейство неявных схем}{9}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.2}Однопараметрическое семейство неявных схем}{11}{subsubsection.3.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.1.3}Локально-одномерные схемы}{9}{subsubsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.3}Локально-одномерные схемы}{11}{subsubsection.3.1.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2}Программный код, примеры расчётов}{9}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.2}Программный код, примеры расчётов}{11}{subsection.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Теория блочных локально-адаптивных сеток}{9}{section.4}%
+\contentsline {section}{\numberline {4}Теория блочных локально-адаптивных сеток}{11}{section.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Замечания о программной реализации}{9}{section.5}%
+\contentsline {section}{\numberline {5}Замечания о программной реализации}{11}{section.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Основные результаты}{9}{section.6}%
+\contentsline {section}{\numberline {6}Основные результаты}{11}{section.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Приложения к физике, реальные задачи}{9}{section.7}%
+\contentsline {section}{\numberline {7}Приложения к физике, реальные задачи}{11}{section.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}Заключение}{9}{section.8}%
+\contentsline {section}{\numberline {8}Заключение}{11}{section.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Список литературы}{11}{section*.4}%
+\contentsline {section}{Список литературы}{13}{section*.5}%
