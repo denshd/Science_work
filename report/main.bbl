@@ -407,46 +407,6 @@
       \field{volume}{82}
       \range{volume}{1}
     \endentry
-    \entry{шхануков2013локально}{article}{useauthor=false}
-      \name{author}{4}{}{%
-        {{hash=a2ca5ab2af807f3360d51b09e925cd48}{%
-           family={Шхануков-Лафишев},
-           familyi={Ш\bibinithyphendelim Л\bibinitperiod},
-           given={Мухамед\bibnamedelima Хабалович},
-           giveni={М\bibinitperiod\bibinitdelim Х\bibinitperiod}}}%
-        {{hash=532b0d717d3b213cc6daae32cbc89e11}{%
-           family={Лафишева},
-           familyi={Л\bibinitperiod},
-           given={Мадина\bibnamedelima Мухамедовна},
-           giveni={М\bibinitperiod\bibinitdelim М\bibinitperiod}}}%
-        {{hash=68adb813c533b2523b1c742fc0411fa7}{%
-           family={Нахушева},
-           familyi={Н\bibinitperiod},
-           given={Фатима\bibnamedelima Мухамедовна},
-           giveni={Ф\bibinitperiod\bibinitdelim М\bibinitperiod}}}%
-        {{hash=17e8e76c59c45d44a8e911e242887ad9}{%
-           family={Мамбетова},
-           familyi={М\bibinitperiod},
-           given={Альбина\bibnamedelima Борисовна},
-           giveni={А\bibinitperiod\bibinitdelim Б\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Федеральное государственное бюджетное учреждение науки Южный математический~…}%
-      }
-      \strng{authorbibnamehash}{48086b1a495baaae1f1889c04928b9b2}
-      \strng{authornamehash}{48086b1a495baaae1f1889c04928b9b2}
-      \strng{authorfullhash}{ca5c64f2802814242e815ba80c6d5717}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Владикавказский математический журнал}
-      \field{title}{Локально-одномерная схема для уравнения теплопроводности с сосредоточенной теплоемкостью}
-      \field{year}{2013}
-      \field{number}{4}
-      \range{number}{1}
-      \field{volume}{15}
-      \range{volume}{1}
-    \endentry
   \enddatalist
 \endrefsection
 \endinput
