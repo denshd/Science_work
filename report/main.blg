@@ -1,17 +1,17 @@
 [0] Config.pm:311> INFO - This is Biber 2.16
 [0] Config.pm:314> INFO - Logfile is 'main.blg'
-[177] biber-MSWIN32:340> INFO - === 
-[249] Biber.pm:415> INFO - Reading 'main.bcf'
-[460] Biber.pm:952> INFO - Found 13 citekeys in bib section 0
-[487] Biber.pm:4340> INFO - Processing section 0
-[503] Biber.pm:4531> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
-[605] bibtex.pm:1689> INFO - LaTeX decoding ...
-[626] bibtex.pm:1494> INFO - Found BibTeX data source 'bibliography.bib'
-[671] Utils.pm:395> WARN - Range field 'number' in entry 'ГалактионовКвазилинейное' is malformed, falling back to literal
-[737] UCollate.pm:68> INFO - Overriding locale 'ru-RU' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[738] UCollate.pm:68> INFO - Overriding locale 'ru-RU' defaults 'variable = shifted' with 'variable = non-ignorable'
-[738] Biber.pm:4168> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'ru-RU'
-[738] Biber.pm:4174> INFO - No sort tailoring available for locale 'ru-RU'
-[750] bbl.pm:654> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[759] bbl.pm:757> INFO - Output to main.bbl
-[759] Biber.pm:128> INFO - WARNINGS: 1
+[137] biber-MSWIN32:340> INFO - === 
+[195] Biber.pm:415> INFO - Reading 'main.bcf'
+[375] Biber.pm:952> INFO - Found 13 citekeys in bib section 0
+[394] Biber.pm:4340> INFO - Processing section 0
+[407] Biber.pm:4531> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[490] bibtex.pm:1689> INFO - LaTeX decoding ...
+[520] bibtex.pm:1494> INFO - Found BibTeX data source 'bibliography.bib'
+[559] Utils.pm:395> WARN - Range field 'number' in entry 'ГалактионовКвазилинейное' is malformed, falling back to literal
+[616] UCollate.pm:68> INFO - Overriding locale 'ru-RU' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[616] UCollate.pm:68> INFO - Overriding locale 'ru-RU' defaults 'variable = shifted' with 'variable = non-ignorable'
+[616] Biber.pm:4168> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'ru-RU'
+[616] Biber.pm:4174> INFO - No sort tailoring available for locale 'ru-RU'
+[627] bbl.pm:654> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[634] bbl.pm:757> INFO - Output to main.bbl
+[634] Biber.pm:128> INFO - WARNINGS: 1
