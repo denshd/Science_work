@@ -16,7 +16,7 @@ struct UniformGrid{T <: AbstractRange{Cdouble}}
     function UniformGrid(Ncells::Integer)
         Nfaces = Ncells + 1
         faces = range(start=0.0, stop=1, length=Nfaces)
-        cells = range(start=(0.0 + step(faces)), step=step(faces), length=Ncells)
+        cells = range(start=(0.0 + 0.5 * step(faces)), step=step(faces), length=Ncells)
 
         new{typeof(cells)}(Ncells, Nfaces, step(cells), 0.5 * step(cells), cells, faces)
     end
@@ -27,7 +27,7 @@ struct UniformGrid{T <: AbstractRange{Cdouble}}
     """
     function UniformGrid(h::Real)
         faces = range(start=0, stop=1, step=h)
-        cells = range(start=(0 + h), step=h, length=(length(faces) - 1))
+        cells = range(start=(0 + 0.5 * h), step=h, length=(length(faces) - 1))
 
         new{typeof(cells)}(length(cells), length(faces), h, 0.5 * h, cells, faces)
     end
@@ -36,9 +36,9 @@ struct UniformGrid{T <: AbstractRange{Cdouble}}
     """
     Создаёт равномерную сетку на `[0, L]` с числом клеток `Ncells`
     """
-    function UniformGrid(L::Real, Ncels::Integer)
+    function UniformGrid(L::Real, Ncells::Integer)
         faces = range(start=0, stop=L, length=(Ncells + 1))
-        cells = range(start=(0 + step(faces)), step=step(faces), length=Ncells)
+        cells = range(start=(0 + 0.5 * step(faces)), step=step(faces), length=Ncells)
 
         new{typeof(cells)}(length(cells), length(faces), step(cells), 0.5 * step(cells), cells, faces)
     end
@@ -49,9 +49,20 @@ struct UniformGrid{T <: AbstractRange{Cdouble}}
     """
     function UniformGrid(L::Real, h::Real)
         faces = range(start=0, stop=L, step=h)
-        cells = range(start=0, step=h, length=(length(faces) - 1))
+        cells = range(start=(0 + 0.5 * step(faces)), step=h, length=(length(faces) - 1))
 
         new{typeof(cells)}(length(cells), length(faces), h, 0.5 * h, cells, faces)
+    end
+
+
+    """
+    Создаёт равномерную сетку на `[x_b[1], x_b[2]]` с числом клеток `Ncells`
+    """
+    function UniformGrid(x_b::Tuple{Real, Real}, Ncells::Integer)
+        faces = range(start=x_b[1], stop=x_b[2], length=(Ncells + 1))
+        cells = range(start=(x_b[1] + 0.5 * step(faces)), step=step(faces), length=Ncells)
+
+        new{typeof(cells)}(length(cells), length(faces), step(cells), 0.5 * step(cells), cells, faces)
     end
 end
 
@@ -117,37 +128,9 @@ end
 
 
 """
-Учёт начальных условий
-"""
-function initial_conditions(problem::HeatProblem, solution::UniformGridSolution)
-    @. solution.u[:, 1] = problem.u0(solution.spacial_grid.cells)
-
-    u_ = 2 * problem.mu_(solution.time_grid.t[1]) - solution.u[1, 1]
-    u = 2 * problem.mu(solution.time_grid.t[1]) - solution.u[end, 1]
-    solution.f[1] = -problem.k(0.5 * (u_ + solution.u[1, 1])) * (solution.u[1, 1] - u_) / solution.spacial_grid.h
-    solution.f[end] = -problem.k(0.5 * (solution.u[end, 1] + u)) * (u - solution.u[end, 1]) / solution.spacial_grid.h
-    for i = 2:(solution.spacial_grid.Nfaces - 1)
-        solution.f[i] =  -problem.k(0.5 * (solution.u[i - 1, 1] + solution.u[i, 1])) * (solution.u[i, 1] - solution.u[i - 1, 1]) / solution.spacial_grid.h
-    end
-end
-
-
-"""
-Обновление `u` при временном шаге `j ↦ j + 1`
-"""
-function update_u(problem::HeatProblem, solution::UniformGridSolution, j::Int)
-    for i = 1:(solution.spacial_grid.Ncells)
-        solution.u[i, j + 1] = solution.u[i, j] - solution.time_grid.τ / solution.spacial_grid.h * (
-            solution.f[i + 1] - solution.f[i]
-        ) + solution.time_grid.τ * problem.f(solution.spacial_grid.cells[i], solution.time_grid.t[j])
-    end
-end
-
-
-"""
 Обновление `f`-- потоков на временном слое `j`
 """
-function update_flux(problem::HeatProblem, solution::UniformGridSolution, j::Int)
+function update_flux!(problem::HeatProblem, solution::UniformGridSolution, j::Int)
     u_ = 2 * problem.mu_(solution.time_grid.t[j]) - solution.u[1, j]
     u = 2 * problem.mu(solution.time_grid.t[j]) - solution.u[end, j]
     solution.f[1] = -problem.k(0.5 * (u_ + solution.u[1, j])) * (solution.u[1, j] - u_) / solution.spacial_grid.h
@@ -159,12 +142,41 @@ end
 
 
 """
+Учёт начальных условий
+"""
+function initial_conditions!(problem::HeatProblem, solution::UniformGridSolution)
+    @. solution.u[:, 1] = problem.u0(solution.spacial_grid.cells)
+
+    update_flux!(problem, solution, 1)
+    # u_ = 2 * problem.mu_(solution.time_grid.t[1]) - solution.u[1, 1]
+    # u = 2 * problem.mu(solution.time_grid.t[1]) - solution.u[end, 1]
+    # solution.f[1] = -problem.k(0.5 * (u_ + solution.u[1, 1])) * (solution.u[1, 1] - u_) / solution.spacial_grid.h
+    # solution.f[end] = -problem.k(0.5 * (solution.u[end, 1] + u)) * (u - solution.u[end, 1]) / solution.spacial_grid.h
+    # for i = 2:(solution.spacial_grid.Nfaces - 1)
+    #     solution.f[i] =  -problem.k(0.5 * (solution.u[i - 1, 1] + solution.u[i, 1])) * (solution.u[i, 1] - solution.u[i - 1, 1]) / solution.spacial_grid.h
+    # end
+end
+
+
+"""
+Обновление `u` при временном шаге `j ↦ j + 1`
+"""
+function update_u!(problem::HeatProblem, solution::UniformGridSolution, j::Int)
+    for i = 1:(solution.spacial_grid.Ncells)
+        solution.u[i, j + 1] = solution.u[i, j] - solution.time_grid.τ / solution.spacial_grid.h * (
+            solution.f[i + 1] - solution.f[i]
+        ) + solution.time_grid.τ * problem.f(solution.spacial_grid.cells[i], solution.time_grid.t[j])
+    end
+end
+
+
+"""
 Цикл по всем временным слоям (основной цикл разностной схемы)
 """
-function time_layers_loop(problem::HeatProblem, solution::UniformGridSolution)
+function time_layers_loop!(problem::HeatProblem, solution::UniformGridSolution)
     for j = 1:(solution.time_grid.Ntime - 1)
-        update_u(problem, solution, j)
-        update_flux(problem, solution, j + 1)
+        update_u!(problem, solution, j)
+        update_flux!(problem, solution, j + 1)
     end
 end
 
@@ -178,10 +190,10 @@ function solve_PDE(problem::HeatProblem, spacial_grid::UniformGrid, time_grid::T
     solution = UniformGridSolution(spacial_grid, time_grid)
 
     # Учёт начальных условий
-    initial_conditions(problem, solution)
+    initial_conditions!(problem, solution)
 
     # Цикл по временным слоям
-    time_layers_loop(problem, solution)
+    time_layers_loop!(problem, solution)
 
     # Возвращаем решение
     return solution

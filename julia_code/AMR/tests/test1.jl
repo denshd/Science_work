@@ -19,7 +19,10 @@ function test()
     sol = solve_PDE(problem, spacial_grid, time_grid)
     println("done!")
 
-    println("Plotting...")
+    println("Plotting grid...")
+    plot_grid(spacial_grid, filename="grid_1.pdf")
+
+    println("Plotting solution...")
     plot_gif(sol)
     println("done!")
 end
