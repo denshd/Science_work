@@ -59,24 +59,25 @@ function quazi_2()
 
     @time sol = solve_PDE(sys, g, :LOC)
 
-    plot_heatmap_gif(sol, filename="output/Samarski_2.gif")
+    # plot_heatmap_gif(sol, filename="output/Samarski_2.gif")
 
 
-    plot(sol.g.x[1], sol.u[:, 110, 301])
-    plot!(sol.g.x[1], sol.u[:, 70, 301])
-    p1 = plot!(sol.g.x[1], sol.u[:, 30, 301])
-    savefig(p1, "output/Samarski_2_x.pdf")
+    # plot(sol.g.x[1], sol.u[:, 110, 301])
+    # plot!(sol.g.x[1], sol.u[:, 70, 301])
+    # p1 = plot!(sol.g.x[1], sol.u[:, 30, 301])
+    # savefig(p1, "output/Samarski_2_x.pdf")
 
 
-    plot(sol.g.x[2], sol.u[10, :, 301])
-    plot!(sol.g.x[2], sol.u[110, :, 301])
-    p2 = plot!(sol.g.x[2], sol.u[210, :, 301])
-    savefig(p1, "output/Samarski_2_y.pdf")
+    # plot(sol.g.x[2], sol.u[10, :, 301])
+    # plot!(sol.g.x[2], sol.u[110, :, 301])
+    # p2 = plot!(sol.g.x[2], sol.u[210, :, 301])
+    # savefig(p1, "output/Samarski_2_y.pdf")
 
-    display(plot(p1, p2))
+    # display(plot(p1, p2))
 
     # plot_gif(sol)
 
 
     # display(plot(sol.g.x[1], sol.u[:, 30, 301]))
+    return nothing
 end

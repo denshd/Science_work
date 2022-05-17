@@ -80,13 +80,13 @@ abstract type Grid end
     end
 
 
-    struct UniformGrid_2 <: Grid2
-        N::Tuple{Int64, Int64}
-        Nt::Int64
+    struct UniformGrid_2{T <: AbstractRange{Float64}} <: Grid2
+        N::Tuple{Int, Int}
+        Nt::Int
         h::Tuple{Float64, Float64}
         τ::Float64
-        x::Tuple{Vector{Float64}, Vector{Float64}}
-        t::Vector{Float64}
+        x::Tuple{T, T}
+        t::T
 
         function UniformGrid_2(N::Tuple{Integer, Integer}, Nt::Integer)
             x1 = range(start=0, stop=1, length=N[1])
@@ -96,7 +96,7 @@ abstract type Grid end
             h = (x1.step, x2.step)
             τ = t.step
 
-            new(N, Nt, h, τ, (x1, x2), t)
+            new{typeof(x1)}(N, Nt, h, τ, (x1, x2), t)
         end
 
         function UniformGrid_2(h::Tuple{Real, Real}, τ::Real)
@@ -104,7 +104,7 @@ abstract type Grid end
             x2 = range(start=0, stop=1, step=h[2])
             t = range(start=0, stop=1, step=τ)
 
-            new((x1.len, x2.len), t.len, h, τ, (x1, x2), t)
+            new{typeof(x1)}((x1.len, x2.len), t.len, h, τ, (x1, x2), t)
         end
 
         function UniformGrid_2(x_b::Tuple{Tuple{Real, Real}, Tuple{Real, Real}}, t_b::Tuple{Real, Real}, N::Tuple{Int64, Int64}, Nt::Integer)
@@ -112,7 +112,7 @@ abstract type Grid end
             x2 = range(start=x_b[2][1], stop=x_b[2][2], length=N[2])
             t = range(start=t_b[1], stop=t_b[2], length=Nt)
 
-            new(N, Nt, (x1.step, x2.step), t.step, (x1, x2), t)
+            new{typeof(x1)}(N, Nt, (x1.step, x2.step), t.step, (x1, x2), t)
         end
 
         # TODO: fix the problem (N isn't define)
@@ -121,7 +121,7 @@ abstract type Grid end
             x2 = range(start=x_b[2][1], stop=x_b[2][2], step=h[2])
             t = range(start=t_b[1], stop=t_b[2], step=τ)
 
-            new(N, Nt, h, τ, (x1, x2), t)
+            new{typeof(x1)}(N, Nt, h, τ, (x1, x2), t)
         end
 
         function UniformGrid_2(L::Tuple{Real, Real}, T::Real, N::Tuple{Integer, Integer}, Nt::Integer)
@@ -129,7 +129,7 @@ abstract type Grid end
             x2 = range(start=0, stop=L[2], length=N[2])
             t = range(start=0, stop=T, length=Nt)
             
-            new(N, Nt, (x2.step, x2.step), t.step, (x1, x2), t)
+            new{typeof(x1)}(N, Nt, (x2.step, x2.step), t.step, (x1, x2), t)
         end
 
         function UniformGrid_2(L::Tuple{Real, Real}, T::Real, h::Tuple{Real, Real}, τ::Real)
@@ -137,7 +137,7 @@ abstract type Grid end
             x2 = range(start=0, stop=L[2], step=h[2])
             t = range(start=0, stop=T, step=τ)
 
-            new((x1.len, x2.len), t.len, h, τ, (x1, x2), t)
+            new{typeof(x1)}((x1.len, x2.len), t.len, h, τ, (x1, x2), t)
         end
     end
 #-
