@@ -15,12 +15,12 @@ function test()
     problem = HeatProblem2(k, k, f, mu_1, mu1, mu_2, mu2, u0)
 
     spacial_grid = UniformGrid2((2.0, 1.0), (30, 30))
-    time_grid = TimeGrid(0.1, 10001)
+    time_grid = TimeGrid(0.1, 1001)
 
     println("done!")
 
     println("Plotting grid...")
-    plot_grid(spacial_grid, filename="2d_grid.pdf")
+    plot_grid(spacial_grid, filename=joinpath("output", "grid_test2.pdf"))
     println("done!")
 
     println("Solving...")
@@ -28,6 +28,6 @@ function test()
     println("done!")
 
     println("Plotting...")
-    plot_gif(sol; filename="solution_test4.gif")
+    plot_gif(sol; filename=joinpath("output", "solution_test4.gif"))
     println("done!")
 end

@@ -107,7 +107,7 @@ function loc_scheme!(u::Array{Float64, 3}, sys::Heat2_quazilinear_1, g::Grid2)
 
             # Получаем решение на временном срезе j + 1 для x[1] = x[1][i]
             tridiagonal_matrix_algorithm!(α[2], β[2], temp_x[2], A[2], B[2], C[2], D[2])
-            u[i1, :, j + 1] = temp_x[2]
+            u[i1, :, j + 1] .= temp_x[2]
         end
     end
 end

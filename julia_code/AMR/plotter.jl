@@ -80,7 +80,7 @@ function plot_gif(
     for i = 1:time_step:Ntime
         label = latexstring(@sprintf "t = %.3f" time[i])
         heatmap(
-            x, y, u[:, :, i],
+            x, y, u[:, :, i]',
             c = :thermal,
             size = picture_size
         )

@@ -20,9 +20,9 @@ function test()
     println("done!")
 
     println("Plotting grid...")
-    plot_grid(spacial_grid, filename="grid_1.pdf")
+    plot_grid(spacial_grid, filename=joinpath("output", "grid_test1.pdf"))
 
     println("Plotting solution...")
-    plot_gif(sol)
+    plot_gif(sol, filename=joinpath("output", "solution_test1.gif"))
     println("done!")
 end

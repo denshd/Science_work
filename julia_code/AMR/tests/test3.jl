@@ -20,6 +20,6 @@ function test()
     println("done!")
 
     println("Plotting...")
-    plot_gif(sol)
+    plot_gif(sol, filename=joinpath("output", "solution_test3.gif`"))
     println("done!")
 end

@@ -148,31 +148,6 @@ function update_flux!(
             u2[i] - solution.u[i, end, j]
         ) / solution.spacial_grid.g[2].h
     end
-    # @time begin
-    # @. solution.f[1][1, :] = -problem.k1(
-    #     0.5 * (u_1 + solution.u[1, :, j])
-    # ) * (
-    #     solution.u[1, :, j] - u_1
-    # ) / solution.spacial_grid.g[1].h
-
-    # @. solution.f[1][end, :] = -problem.k1(
-    #     0.5 * (solution.u[end, :, j] + u1)
-    # ) * (
-    #     u1 - solution.u[end, :, j]
-    # ) / solution.spacial_grid.g[1].h
-
-    # @. solution.f[2][:, 1] = -problem.k2(
-    #     0.5 * (u_2 + solution.u[:, 1, j])
-    # ) * (
-    #     solution.u[:, 1, j] - u_2
-    # ) / solution.spacial_grid.g[2].h
-
-    # @. solution.f[2][:, end] = -problem.k2(
-    #     0.5 * (solution.u[:, end, j] + u2)
-    # ) * (
-    #     u2 - solution.u[:, end, j]
-    # ) / solution.spacial_grid.g[2].h
-    # end
 
     for i in 2:(solution.spacial_grid.g[1].Nfaces - 1)
         for k in 2:(solution.spacial_grid.g[2].Nfaces - 1)
@@ -233,6 +208,103 @@ function update_u!(
 end
 
 
+function update_u_loc!(
+    problem::HeatProblem2, solution::UniformGrid2Solution, j::Int,
+    α::Tuple{Vector{Cdouble}, Vector{Cdouble}},
+    β::Tuple{Vector{Cdouble}, Vector{Cdouble}},
+    temp_x::Tuple{Vector{Cdouble}, Vector{Cdouble}},
+    A::Tuple{Vector{Cdouble}, Vector{Cdouble}},
+    B::Tuple{Vector{Cdouble}, Vector{Cdouble}},
+    C::Tuple{Vector{Cdouble}, Vector{Cdouble}},
+    D::Tuple{Vector{Cdouble}, Vector{Cdouble}}
+    )
+
+    k1 = problem.k1
+    k2 = problem.k2
+    f = problem.f
+    mu_1 = problem.mu_1
+    mu1 = problem.mu1
+    mu_2 = problem.mu_2
+    mu2 = problem.mu2
+
+    u = solution.u
+    x = solution.spacial_grid.g[1].cells
+    y = solution.spacial_grid.g[2].cells
+    hx = solution.spacial_grid.g[1].h
+    hy = solution.spacial_grid.g[2].h
+    Nx = solution.spacial_grid.g[1].Ncells
+    Ny = solution.spacial_grid.g[2].Ncells
+    t = solution.time_grid.t
+    τ = solution.time_grid.τ
+
+    w = zeros(Nx, Ny)
+
+    t_half = t[j] + 0.5 * τ
+
+    # Сначала решаем задачу вдоль оси x для всех k
+    for k = 1:Ny
+
+        # Создаём трёхдиагональную матрицу
+        for i = 2:(Nx - 1)
+            A[1][i - 1] = -(1 / hx^2) * k1(0.5 * (u[i - 1, k, j] + u[i, k, j]))
+            B[1][i] = 1 / τ + (1 / hx^2) * (
+                k1(0.5 * (u[i - 1, k, j] + u[i, k, j])) +
+                k1(0.5 * (u[i + 1, k, j] + u[i, k, j]))
+            )
+            C[1][i] = -(1 / hx^2) * k1(0.5 * (u[i + 1, k, j] + u[i, k, j]))
+            D[1][i] = (1 / τ) * u[i, k, j] + 0.5 * f(x[i], y[k], t[j])
+        end
+
+        # учёт граничных условий
+        u_1 = 2 * mu_1(y[k], t[j]) - u[1, k, j]
+        u1 = 2 * mu1(y[k], t[j]) - u[end, k, j]
+
+        B[1][1] = hx^2 + τ * k1(0.5 * (u[1, k, j] + u[2, k, j])) + 2 * τ * k1(0.5 * (u_1 + u[1, k, j]))
+        C[1][1] = -τ * k1(0.5 * (u[1, k, j] + u[2, k, j]))
+        D[1][1] = τ * hx^2 * f(x[1], y[k], t[j]) + hx^2 * u[1, k, j] + 2 * mu_1(y[k], t_half) * τ * k1(0.5 * (u_1 + u[1, k, j]))
+
+        A[1][end] = -τ * k1(0.5 * (u[end - 1, k, j] + u[end, k, j]))
+        B[1][end] = hx^2 + τ * k1(0.5 * (u[end - 1, k, j] + u[end, k, j])) + 2 * τ * k1(0.5 * (u1 + u[end, k, j]))
+        D[1][end] = τ * hx^2 * f(x[end], y[k], t[j]) + hx^2 * u[end, k, j] + 2 * mu1(y[k], t_half) * τ * k1(0.5 * (u[end, k, j] + u1))
+
+        # получаем решение
+        tridiagonal_matrix_algorithm!(α[1], β[1], temp_x[1], A[1], B[1], C[1], D[1])
+        w[:, k] .= temp_x[1]
+    end
+
+    # Теперь то же самое вдоль оси y для всех i:
+    for i = 1:Nx
+
+        # Создаём трёхдиагональную матрицу
+        for k = 2:(Ny - 1)
+            A[2][k - 1] = -(1 / hy^2) * k2(0.5 * (w[i, k - 1] + w[i, k]))
+            B[2][k] = 1 / τ + (1 / hy^2) * (
+                k2(0.5 * (w[i, k] + w[i, k - 1])) +
+                k2(0.5 * (w[i, k + 1] + w[i, k]))
+            )
+            C[2][k] = -(1 / hy^2) * k2(0.5 * (w[i, k] + w[i, k + 1]))
+            D[2][k] = (1 / τ) * w[i, k] + 0.5 * f(x[i], y[k], t_half)
+        end
+
+        # учёт граничных условий
+        u_2 = 2 * mu_2(x[i], t_half) - w[i, 1]
+        u2 = 2 * mu2(x[i], t_half) - w[i, end]
+
+        B[2][1] = hy^2 + τ * k2(0.5 * (w[i, 1] + w[i, 2])) + 2 * τ * k2(0.5 * (u_2 + w[i, 1]))
+        C[2][1] = -τ * k2(0.5 * (w[i, 1] + w[i, 2]))
+        D[2][1] = τ * hy^2 * f(x[i], y[1], t_half) + hy^2 * w[i, 1] + 2 * mu_2(x[i], t[j + 1]) * τ * k2(0.5 * (u_2 + w[i, 1]))
+
+        A[2][end] = -τ * k2(0.5 * (w[i, end - 1] + w[i, end]))
+        B[2][end] = hy^2 + τ * k2(0.5 * (w[i, end - 1] + w[i, end])) + 2 * τ * k2(0.5 * (u2 + w[i, end]))
+        D[2][end] = τ * hy^2 * f(x[i], y[end], t_half) + hy^2 * w[i, end] + 2 * mu2(x[i], t[j + 1]) * τ * k2(0.5 * (w[i, end] + u2))
+
+        # получаем решение 
+        tridiagonal_matrix_algorithm!(α[2], β[2], temp_x[2], A[2], B[2], C[2], D[2])
+        u[i, :, j + 1] .= temp_x[2]
+    end
+
+end
+
 """
 Цикл по всем временным слоям (основной цикл разностной схемы)
 """
@@ -241,8 +313,41 @@ function time_layers_loop!(
     u_1::Vector{Cdouble}, u1::Vector{Cdouble}, u_2::Vector{Cdouble}, u2::Vector{Cdouble}
     )
 
+    # Векторы для прогонки
+    A::Tuple{Vector{Float64}, Vector{Float64}} = (
+        Vector{Float64}(undef, solution.spacial_grid.g[1].Ncells - 1),
+        Vector{Float64}(undef, solution.spacial_grid.g[2].Ncells - 1)
+    )
+    B::Tuple{Vector{Float64}, Vector{Float64}} = (
+        Vector{Float64}(undef, solution.spacial_grid.g[1].Ncells),
+        Vector{Float64}(undef, solution.spacial_grid.g[2].Ncells)
+    )
+    C::Tuple{Vector{Float64}, Vector{Float64}} = (
+        Vector{Float64}(undef, solution.spacial_grid.g[1].Ncells - 1),
+        Vector{Float64}(undef, solution.spacial_grid.g[2].Ncells - 1)
+    )
+    D::Tuple{Vector{Float64}, Vector{Float64}} = (
+        Vector{Float64}(undef, solution.spacial_grid.g[1].Ncells),
+        Vector{Float64}(undef, solution.spacial_grid.g[2].Ncells)
+    )
+
+    # Временные векторы для прогонки
+    α::Tuple{Vector{Float64}, Vector{Float64}} = (
+        Vector{Float64}(undef, solution.spacial_grid.g[1].Ncells),
+        Vector{Float64}(undef, solution.spacial_grid.g[2].Ncells)
+    )
+    β::Tuple{Vector{Float64}, Vector{Float64}} = (
+        Vector{Float64}(undef, solution.spacial_grid.g[1].Ncells),
+        Vector{Float64}(undef, solution.spacial_grid.g[2].Ncells)
+    )
+    temp_x::Tuple{Vector{Float64}, Vector{Float64}} = (
+        Vector{Float64}(undef, solution.spacial_grid.g[1].Ncells),
+        Vector{Float64}(undef, solution.spacial_grid.g[2].Ncells)
+    )
+
     for j = 1:(solution.time_grid.Ntime - 1)
-        update_u!(problem, solution, u_1, u1, u_2, u2, j)
+        # update_u!(problem, solution, u_1, u1, u_2, u2, j)
+        update_u_loc!(problem, solution, j, α, β, temp_x, A, B, C, D)
         update_flux!(problem, solution, u_1, u1, u_2, u2, j + 1)
     end
 end
