@@ -105,14 +105,29 @@ function get_range_type(::UniformGrid2{T}) where T
 end
 
 
+struct Memory_for_time_step
+    A::Tuple{Vector{Cdouble}, Vector{Cdouble}}
+    B::Tuple{Vector{Cdouble}, Vector{Cdouble}}
+    C::Tuple{Vector{Cdouble}, Vector{Cdouble}}
+    D::Tuple{Vector{Cdouble}, Vector{Cdouble}}
+
+    α::Tuple{Vector{Cdouble}, Vector{Cdouble}}
+    β::Tuple{Vector{Cdouble}, Vector{Cdouble}}
+    temp_x::Tuple{Vector{Cdouble}, Vector{Cdouble}}
+end
+
+
 """
 "Блок". Хранит сетку, текущее время, временной шаг блока
 """
 struct Block{T <: AbstractRange{Cdouble}}
-    spacial_grid::UniformGrid2{T}
-    u_new::Matrix{Cdouble}
-    u_old::Matrix{Cdouble}
+    spacial_grid::UniformGrid2{T} # Сетка
+    u_new::Matrix{Cdouble} # Новое значение
+    u_old::Matrix{Cdouble} # Старое значение (просто нельзя вот так взять и обновить новое без старого. А каждый раз выделять память -- затратно)
     w::Matrix{Cdouble}
+    
+    """А тут всё то, что нужно для одного time_step!"""
+    memory_for_time_step::Memory_for_time_step
 end
 
 
@@ -121,7 +136,7 @@ end
 """
 mutable struct Level{T <: AbstractRange{Cdouble}}
     level_number::Int # номер уровня в иерархии уровней
-    sublevel::Union{Nothing, Level}
+    sublevel::Union{Nothing, Level{T}}
 
     blocks::Vector{Block{T}} # массив блоков сеток UniformGrid2
     M::Int # число блоков сетки UniformGrid2
@@ -150,4 +165,27 @@ function has_sublevel(L::Level)
     else
         return false
     end
+end
+
+
+"""
+Возвращает `n`-ый подуровень (`0` -- сам уровень) уровня `L`
+"""
+function get_level(L::Level, n::Int)
+    if (n == 0)
+        return L
+    elseif has_sublevel(L)
+        return get_level(L.sublevel, n - 1)
+    else
+        throw(DomainError("$n sublevel doesn't exist."))
+    end
+end
+
+
+"""
+Вот здесь хранится ВСЁ.
+"""
+mutable struct Solution{T <: AbstractRange{Cdouble}}
+    levels::Vector{Level{T}} # Вектор нулевых уровней (для каждой временной точки). Нулевой уровень -- он же содержит и подуровни
+    time_grid::UniformGrid{T}
 end
