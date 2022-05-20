@@ -67,6 +67,7 @@ function plot_gif(
     x = solution.spacial_grid.g[1].cells
     y = solution.spacial_grid.g[2].cells
     u = solution.u
+    cbar_limits = (min(u...), max(u...))
 
     time_step = div(Ntime, number_of_frames)
 
@@ -82,6 +83,7 @@ function plot_gif(
         heatmap(
             x, y, u[:, :, i]',
             c = :thermal,
+            cbar_lims=cbar_limits,
             size = picture_size
         )
         frame(anim)

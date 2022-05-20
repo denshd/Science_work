@@ -114,6 +114,19 @@ struct Memory_for_time_step
     α::Tuple{Vector{Cdouble}, Vector{Cdouble}}
     β::Tuple{Vector{Cdouble}, Vector{Cdouble}}
     temp_x::Tuple{Vector{Cdouble}, Vector{Cdouble}}
+
+
+    function Memory_for_time_step(N::Tuple{Integer, Integer})
+        new(
+            Tuple(Vector{Cdouble}(undef, N[i] - 1) for i = 1:2),
+            Tuple(Vector{Cdouble}(undef, N[i]) for i = 1:2),
+            Tuple(Vector{Cdouble}(undef, N[i] - 1) for i = 1:2),
+            Tuple(Vector{Cdouble}(undef, N[i]) for i = 1:2),
+            Tuple(Vector{Cdouble}(undef, N[i]) for i = 1:2),
+            Tuple(Vector{Cdouble}(undef, N[i]) for i = 1:2),
+            Tuple(Vector{Cdouble}(undef, N[i]) for i = 1:2)
+        )
+    end
 end
 
 
@@ -122,12 +135,69 @@ end
 """
 struct Block{T <: AbstractRange{Cdouble}}
     spacial_grid::UniformGrid2{T} # Сетка
+
+    block_index::Int
+    supblock_index::Int
+    supblock_position::Tuple{Tuple{Int, Int}, Tuple{Int, Int}} # Координаты `((x1, x2), (y1, y2))` положения блока в надблоке (в индексных координатах надблока)
+    
     u_new::Matrix{Cdouble} # Новое значение
     u_old::Matrix{Cdouble} # Старое значение (просто нельзя вот так взять и обновить новое без старого. А каждый раз выделять память -- затратно)
-    w::Matrix{Cdouble}
+    w::Matrix{Cdouble} # Промежуточное значение в Локально-одномерной схеме
+    w_boundary::Matrix{Cdouble} # Граничные значения промежуточного значения `w` в Локально-одномерной схеме.
     
-    """А тут всё то, что нужно для одного time_step!"""
-    memory_for_time_step::Memory_for_time_step
+    memory_for_time_step::Memory_for_time_step # А тут всё то, что нужно для одного time_step!
+end
+
+
+function create_block(
+    spacial_grid::UniformGrid2{T},
+    block_index::Integer,
+    supblock_index::Integer,
+    supblock_position::Tuple{Tuple{Integer, Integer}, Tuple{Integer, Integer}}
+    ) where T
+
+    Nx = spacial_grid.g[1].N
+    Ny = spacial_grid.g[2].N
+
+    return Block{T}(
+        spacial_grid,
+        block_index,
+        supblock_index,
+        supblock_position,
+        Matrix{Cdouble}(undef, (Nx, Ny)),
+        Matrix{Cdouble}(undef, (Nx, Ny)),
+        Matrix{Cdouble}(undef, (Nx, Ny)),
+        Matrix{Cdouble}(undef, (2, Ny)),
+        Memory_for_time_step((Nx, Ny))
+    )
+end
+
+
+function create_subblock(
+    block::Block{T},
+    subblock_index::Integer,
+    subblock_position::Tuple{Tuple{Integer, Integer}, Tuple{Integer, Integer}}
+    ) where T
+
+    i1 = subblock_position[1][1]
+    i2 = subblock_position[1][2]
+    j1 = subblock_position[2][1]
+    j2 = subblock_position[2][2]
+
+    x = block.spacial_grid.g[1].x
+    hx = block.spacial_grid.g[1].h
+    y = block.spacial_grid.g[2].x
+    hy = block.spacial_grid.g[2].h
+
+    return create_block(
+        UniformGrid2(
+            ((x[i1], x[i2]), (y[j1], y[j2])), 
+            (0.5 * hx, 0.5 * hy)
+        ),
+        subblock_index,
+        block.block_index,
+        subblock_position
+    )
 end
 
 
@@ -136,7 +206,8 @@ end
 """
 mutable struct Level{T <: AbstractRange{Cdouble}}
     level_number::Int # номер уровня в иерархии уровней
-    sublevel::Union{Nothing, Level{T}}
+    sublevel::Union{Nothing, Level{T}} # подуровень
+    suplevel::Union{Nothing, Level{T}} # надуровень
 
     blocks::Vector{Block{T}} # массив блоков сеток UniformGrid2
     M::Int # число блоков сетки UniformGrid2
@@ -156,14 +227,57 @@ mutable struct Level{T <: AbstractRange{Cdouble}}
 end
 
 
+function initialize_level(blocks::Vector{Block{T}}, t_curr::Cdouble, Δt::Cdouble) where T
+    return Level{T}(
+        1,
+        nothing,
+        nothing,
+        blocks,
+        length(blocks),
+        t_curr,
+        Δt
+    )
+end
+
+
+function add_sublevel!(suplevel::Level{T}, blocks::Vector{Block{T}}) where T
+    if has_sublevel(suplevel)
+        throw(Exception("level already have sublevel"))
+    else
+        suplevel.sublevel = Level{T}(
+            suplevel.level_number + 1,
+            nothing,
+            suplevel,
+            blocks,
+            length(blocks),
+            suplevel.t_curr,
+            suplevel.Δt * 0.5
+        )
+    end
+    return suplevel.sublevel
+end
+
+
 """
 Функция проверяет, ∃? подуровень уровня `L::Level`
 """
-function has_sublevel(L::Level)
+function has_sublevel(L::Level{T}) where T
     if (typeof(L.sublevel) == Nothing)
-        return true
-    else
         return false
+    else
+        return true
+    end
+end
+
+
+"""
+Функция проверяет, ∃? надуровень уровня `L::Level`
+"""
+function has_suplevel(L::Level{T}) where T
+    if (typeof(L.suplevel) == Nothing)
+        return false
+    else
+        return true
     end
 end
 
@@ -171,7 +285,7 @@ end
 """
 Возвращает `n`-ый подуровень (`0` -- сам уровень) уровня `L`
 """
-function get_level(L::Level, n::Int)
+function get_level(L::Level{T}, n::Int) where T
     if (n == 0)
         return L
     elseif has_sublevel(L)
@@ -179,6 +293,38 @@ function get_level(L::Level, n::Int)
     else
         throw(DomainError("$n sublevel doesn't exist."))
     end
+end
+
+
+function get_suplevel(L::Level{T}) where T
+    if has_suplevel(L)
+        return L.suplevel
+    else
+        throw(DomainError("suplevel doesn't exist"))
+    end
+end
+
+
+function get_sublevel(L::Level{T}) where T
+    if has_sublevel(L)
+        return L.sublevel
+    else
+        throw(DomainError("sublevel doesn't exist"))
+    end
+end
+
+
+function get_level_refinement_ratio(L::Level{T}) where T
+    if has_suplevel(L)
+        return 2
+    else
+        return 1
+    end
+end
+
+
+function get_type(L::Level{T}) where T
+    return T
 end
 
 
