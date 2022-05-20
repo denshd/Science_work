@@ -214,16 +214,6 @@ mutable struct Level{T <: AbstractRange{Cdouble}}
 
     t_curr::Cdouble # Текущее время на уровне
     Δt::Cdouble # Временной шаг уровня
-
-
-    # function Level(spacial_grids::Vector{UniformGrid2{T}}, time_grid::UniformGrid{T}, level_number::Integer) where T <: AbstractRange{Cdouble}
-    #     new{get_range_type(spacial_grid[1])}(
-    #         spacial_grids,
-    #         length(spacial_grids),
-    #         time_grid,
-    #         Matrix{Cdouble}(undef, ())
-    #     )
-    # end
 end
 
 

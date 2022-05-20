@@ -97,7 +97,7 @@ function set_boundary_values(problem::HeatProblem2, level::Level{T}, time_i::Int
         i1 = block.supblock_position[1][1] 
         i2 = block.supblock_position[1][2]
         j1 = block.supblock_position[2][1]
-        j2 = block.supblock_position[2][1]
+        j2 = block.supblock_position[2][2]
 
         # Точная пространственная интерполяция с линейной временной
         is = 0
@@ -221,8 +221,8 @@ function time_step!(problem::HeatProblem2, block::Block{T}, t_curr::Cdouble, Δt
         # Граничные значения уже были учтены в set_boundary_values()
         B[1][1] = B[1][end] = 1
         C[1][1] = A[1][end] = 0
-        D[1][1] = w_boundary[1, k]
-        D[1][end] = w_boundary[end, k]
+        D[1][1] = u_new[1, k]
+        D[1][end] = u_new[end, k]
 
         # Получаем временный вектор w
         tridiagonal_matrix_algorithm!(α[1], β[1], temp_x[1], A[1], B[1], C[1], D[1])

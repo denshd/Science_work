@@ -20,6 +20,9 @@ function test()
     solution = create_grid()
     println("done!")
 
+    println(get_level(solution.levels[1], 1).blocks[1].supblock_position)
+    println(get_level(solution.levels[1], 2).blocks[6].supblock_position)
+
     plot_grid(solution.levels[1], filename=joinpath("output", "first_result.pdf"))
 
     println("Solving...")
