@@ -20,19 +20,16 @@ function test()
     solution = create_grid()
     println("done!")
 
-    println(get_level(solution.levels[1], 1).blocks[1].supblock_position)
-    println(get_level(solution.levels[1], 2).blocks[6].supblock_position)
-
     plot_grid(solution.levels[1], filename=joinpath("output", "first_result.pdf"))
 
     println("Solving...")
-    solve_PDE(problem, solution)
+    @time solve_PDE(problem, solution)
     println("done!")
 
     println("Plotting solution...")
     plot_gif(solution, filename=joinpath("output", "first_result_gifka.gif"))
     println("done!")
-    return nothing
+    return solution
 end
 
 
@@ -42,9 +39,11 @@ function create_grid()
     L2 = 1
     N = (100, 100)
 
-    T = 0.1
-    Nt = 101
-    time_grid = UniformGrid(T, Nt)
+    T1 = 0.1
+    T2 = 0.5
+    Nt = 201
+    time_grid = UniformGrid((T1, T2), Nt)
+    # time_grid = UniformGrid(T, Nt)
     Δt = time_grid.h
 
     main_block = create_block(

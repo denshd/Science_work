@@ -1,4 +1,4 @@
-using Plots, LaTeXStrings, Printf
+using Plots, GLMakie, LaTeXStrings, Printf
 
 include("grids.jl")
 
@@ -12,7 +12,7 @@ function plot_grid(
     filename=joinpath("output", "grid_test.pdf")
     ) where T
 
-    p = plot()
+    p = Plots.plot()
     plot_grid!(p, level)
 
     savefig(p, filename)
@@ -54,7 +54,7 @@ function plot_grid!(
     Y = g.g[2].x
 
     for x in X
-        plot!(
+        Plots.plot!(
             p,
             [x, x], [Y[1], Y[end]],
             label="",
@@ -63,7 +63,7 @@ function plot_grid!(
         )
     end
     for y in Y
-        plot!(
+        Plots.plot!(
             p,
             [X[1], X[end]], [y, y],
             label="",
@@ -78,7 +78,7 @@ function plot_gif(
     solution::Solution;
     t1 = solution.time_grid.x[1],
     t2 = solution.time_grid.x[end],
-    number_of_frames = min(100, solution.time_grid.N),
+    number_of_frames = min(200, solution.time_grid.N),
     fps = 60,
     filename = "solution.gif",
     picture_size=(1280, 1024)
@@ -86,9 +86,23 @@ function plot_gif(
 
     time = solution.time_grid.x
     Ntime = solution.time_grid.N
-    x = solution.levels[1].sublevel.sublevel.blocks[6].spacial_grid.g[1].x
-    y = solution.levels[1].sublevel.sublevel.blocks[6].spacial_grid.g[2].x
-    # cbar_limits = (min(u...), max(u...))
+
+    # Находит пределы для colorbar'а
+    u_max = -Inf
+    u_min = +Inf
+    for level in solution.levels
+        for block in level.blocks
+            temp_max = max(block.u_new...)
+            temp_min = min(block.u_new...)
+            if temp_max > u_max
+                u_max = temp_max
+            end
+            if temp_min < u_min
+                u_min = temp_min
+            end
+        end
+    end
+    cbar_limits = (u_min, u_max)
 
     time_step = div(Ntime, number_of_frames)
 
@@ -101,17 +115,23 @@ function plot_gif(
     anim = Animation()
     for i = 1:time_step:Ntime
         label = latexstring(@sprintf "t = %.3f" time[i])
-        heatmap(
-            x, y,
-            solution.levels[i].sublevel.sublevel.blocks[6].u_new',
-            c = :thermal,
-            # cbar_lims=cbar_limits,
-            size = picture_size
-        )
+        
+        level = solution.levels[i]
+        h = Plots.plot()
+        for block in level.blocks
+            Plots.heatmap!(block.spacial_grid.g[1].x, block.spacial_grid.g[2].x, block.u_new', c = :thermal, cbar_lims = cbar_limits, size = picture_size, title=label)
+        end
+        while (has_sublevel(level))
+            level = get_sublevel(level)
+            for block in level.blocks
+                Plots.heatmap!(block.spacial_grid.g[1].x, block.spacial_grid.g[2].x, block.u_new', c = :thermal, cbar_lims = cbar_limits, size = picture_size, title=label)
+            end
+        end
+
         frame(anim)
     end
 
-    G = gif(anim, filename, fps=1);
+    G = gif(anim, filename, fps=fps);
 end
 
 # """

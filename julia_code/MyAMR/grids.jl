@@ -149,6 +149,7 @@ struct Block{T <: AbstractRange{Cdouble}}
 end
 
 
+
 function create_block(
     spacial_grid::UniformGrid2{T},
     block_index::Integer,
@@ -316,6 +317,26 @@ end
 function get_type(L::Level{T}) where T
     return T
 end
+
+
+function get_deepest_level(L::Level{T}) where T
+    l = L
+    while has_sublevel(L)
+        l = L.sublevel
+    end
+    return l
+end
+
+
+# function create_solution_function(level::Leve{T}) where T
+#     curr_level = get_deepest_level(level)
+#     function result(x, y, t)
+#         while true
+#             for block in curr_level.blocks
+#                 if x in 
+#         end
+#     end
+# end
 
 
 """
