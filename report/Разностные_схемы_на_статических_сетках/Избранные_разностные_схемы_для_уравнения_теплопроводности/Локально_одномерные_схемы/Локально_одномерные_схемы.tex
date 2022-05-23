@@ -1,0 +1,81 @@
+\newcommand{\valpha}{v_{(\alpha)}}
+
+Итак, явные схемы обладают быстрой скоростью счёта ($\sim O(N^n)$), в то время как устойчивость таких систем достигается лишь при определённом выборе параметров сетки.
+Неявные схемы безусловно устойчивы и имеют больший порядок точности, однако требуют решения системы $N^n$ уравнений, для чего требуется значительно больше вычислительной работы, чем для явной схемы \cite{ТихоновСамарский}.
+
+Для сочетания лучших качеств явных (объём работы $\sim O(N^n)$) и неявных (безусловная устойчивость) схем было предложено несколько \emph{экономичных} схем.
+Подбробнее об этом написано в \cite{СамарскийТеорияРазностныхСхем, peaceman1955numerical, douglas1955numerical, яненко1959одном, дьяконов1962разностные, самарский1962одном}.
+
+\emph{Локально-одномерный метод} является универсальным, пригодным для решения квазилинейного уравнения теплопроводности в произвольной области $G$ любого числа измерений.
+При использовании в работе блочных локально-адаптивных сеток \ref{sec:LAG} используется именно этот метод.
+Также будут использоваться прямоугольные области, поэтому формулировка метода будет приведена для таковых.
+
+Итак, рассматриваемую многомерную задачу Дирихле в цилиндре $\bar{Q}_T = \bar{G} \times [0, T]$, $\bar{G} = \prod\limits_{i=1}^{n} [0, L_i]$
+\begin{equation*}
+    \begin{aligned}
+        &\left\{ 
+            \begin{aligned}
+                & u_t = \sum\limits_{\alpha = 1}^{p} \frac{\partial }{\partial x_{\alpha}} \left[ 
+                    k_{\alpha}(u) \frac{\partial u}{\partial x_{\alpha}}
+                 \right] + f, && (x, t) \in G \times (0, T]\\
+                & \begin{aligned}
+                    & u(x, t) = \mu_{-i}(x, t), && x_i = 0\\
+                    & u(x, t) = \mu_{i}(x, t), && x_i = L_i
+                \end{aligned}, && t \in [0, T)\\
+                &u(x, 0) = u_0(x), && x \in \bar{G}
+            \end{aligned}
+        \right.\\
+    \end{aligned}
+\end{equation*}
+заменяем \emph{цепочкой одномерных} задач \glqq вдоль каждого из напарвлений\grqq:
+\begin{equation*}
+    \begin{cases}
+        \frac{1}{p} \frac{\partial v_{(\alpha)}}{\partial t} = \frac{\partial }{\partial x_{\alpha}} \left[ k_{\alpha}(v_{(\alpha)}) \frac{\partial v_{(\alpha)}}{\partial x_{\alpha}} \right] + f_{\alpha}, &
+            x \in G, t \in \Delta_{\alpha} = \left( 
+                t_{j + \frac{\alpha - 1}{p}}, 
+                t_{j + \frac{\alpha}{p}}
+            \right]\\
+        \valpha(x, t_{j + \frac{\alpha - 1}{p}}) = v_{(\alpha - 1)}(x, t_{j + \frac{\alpha - 1}{p}}), & x \in G\\
+        \valpha(x, t) = \mu_{-\alpha}(x, t), & x_{\alpha} = 0, t \in [t_{j + \frac{\alpha - 1}{p}}, t_{j + \frac{\alpha }{p}}]\\
+        \valpha(x, t) = \mu_{\alpha}(x, t), & x_{\alpha} = L_{\alpha}, t \in [t_{j + \frac{\alpha - 1}{p}}, t_{j + \frac{\alpha }{p}}]\\
+    \end{cases}
+\end{equation*}
+\begin{equation*}
+    \begin{aligned}
+        &\valpha(x, 0) = u_0(x)\\
+        & v_{(1)}(x, t_j) = v_{(p)}(x, t_j)\\
+        & u(x, t_{j + 1}) = v_{(p)}(x, t_{j + 1}).
+    \end{aligned}
+\end{equation*}
+Каждая из одномерных задач решается неявной двухслойной шеститочечной схемой с весом $\sigma_{\alpha}$.
+Пускай область $G$ дискретизуется сеткой $\omega_h$, имеющий вдоль каждого направления $N$ точек.
+Для каждого значения $\alpha = 1, \ldots, p$ получается $N^{p - 1}$ задач. 
+Каждая из них решается (методом прогодки как неявная одномерная схема) за $\sim O(N)$.
+Таким образом, 
+
+
+
+% \begin{equation*}
+%     \frac{1}{p} \frac{\partial v_{(\alpha)}}{\partial t} =
+%     \frac{\partial }{\partial x_{\alpha}} \left[ 
+%                     k_{\alpha}(v_{(\alpha)}) \frac{\partial v_{(\alpha)}}{\partial x_{\alpha}} \right] + f_{\alpha},
+% \end{equation*}
+% \begin{equation*}
+%     \text{где } t \in \Delta_{\alpha} = \left( 
+%         t_{j + \frac{\alpha - 1}{p}}, 
+%         t_{j + \frac{\alpha}{p}}
+%     \right], \quad \alpha = 1, \ldots, p; \quad \sum_{\alpha = 1}^{p} f_{\alpha} = f
+% \end{equation*}
+% с граничными условиями:
+% \begin{equation*}
+%     \begin{cases}
+%         \valpha(x, t) = \mu_{-\alpha}(x, t), & x_{\alpha} = 0, t \in \Delta_{\alpha}
+%         \valpha(x, t) = \mu_{\alpha}(x, t), & x_{\alpha} = L_{\alpha}, t \in \Delta_{\alpha}
+%     \end{cases}, \quad \alpha = 1, \ldots, p
+% \end{equation*}
+% и начальными условиями:
+% \begin{equation*}
+%     \begin{cases}
+        
+%     \end{cases}
+% \end{equation*}

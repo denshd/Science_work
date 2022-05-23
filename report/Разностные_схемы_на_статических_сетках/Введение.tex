@@ -13,12 +13,30 @@
 \end{equation*}
 Как указывалось выше, свойства разностной схемы зависят и от выбора аппроксимирующего оператора $L_h$.
 В \cite{СамарскийТеорияРазностныхСхем} исследуется множество различных схем.
-Далее приводятся избранные схемы, каждая из которых обладает отличительной особенностью, для задачи Дирихле для линейного и квазилинейного уравнений теплопроводности.
+Далее приводятся избранные схемы, каждая из которых обладает отличительной особенностью, для задачи Дирихле для линейного:
 \begin{equation*}
     \begin{aligned}
         &\left\{ 
             \begin{aligned}
                 & u_t = \Delta u + f, && (x, t) \in G \times (0, T)\\
+                & \begin{aligned}
+                    & u(x, t) = \mu_{-i}(x, t), && x_i = 0\\
+                    & u(x, t) = \mu_{i}(x, t), && x_i = L_i
+                \end{aligned}, && t \in [0, T)\\
+                &u(x, 0) = u_0(x), && x \in \bar{G}
+            \end{aligned}
+        \right.\\
+        &\text{где } \bar{G} = \prod\limits_{i=1}^{n} [0, L_i].
+    \end{aligned}
+\end{equation*}
+и квазилинейного уравнений теплопроводности:
+\begin{equation*}
+    \begin{aligned}
+        &\left\{ 
+            \begin{aligned}
+                & u_t = \sum\limits_{\alpha = 1}^{p} \frac{\partial }{\partial x_{\alpha}} \left[ 
+                    k_{\alpha}(u) \frac{\partial u}{\partial x_{\alpha}}
+                 \right] + f, && (x, t) \in G \times (0, T)\\
                 & \begin{aligned}
                     & u(x, t) = \mu_{-i}(x, t), && x_i = 0\\
                     & u(x, t) = \mu_{i}(x, t), && x_i = L_i

@@ -3494,6 +3494,14 @@
     <bcf:citekey order="10">berger1989local</bcf:citekey>
     <bcf:citekey order="11">СамарскийТеорияРазностныхСхем</bcf:citekey>
     <bcf:citekey order="12">СамарскийТеорияРазностныхСхем</bcf:citekey>
+    <bcf:citekey order="13">СамарскийТеорияРазностныхСхем</bcf:citekey>
+    <bcf:citekey order="14">ТихоновСамарский</bcf:citekey>
+    <bcf:citekey order="15">СамарскийТеорияРазностныхСхем</bcf:citekey>
+    <bcf:citekey order="15">peaceman1955numerical</bcf:citekey>
+    <bcf:citekey order="15">douglas1955numerical</bcf:citekey>
+    <bcf:citekey order="15">яненко1959одном</bcf:citekey>
+    <bcf:citekey order="15">дьяконов1962разностные</bcf:citekey>
+    <bcf:citekey order="15">самарский1962одном</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

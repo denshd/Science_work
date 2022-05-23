@@ -407,6 +407,168 @@
       \field{volume}{82}
       \range{volume}{1}
     \endentry
+    \entry{peaceman1955numerical}{article}{}
+      \name{author}{2}{}{%
+        {{hash=aac06d5661e9fc3f8b29b2f8b0359b2d}{%
+           family={Peaceman},
+           familyi={P\bibinitperiod},
+           given={Donald\bibnamedelima W},
+           giveni={D\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=60f9194b440f4cde48513d448d9a19d9}{%
+           family={Rachford},
+           familyi={R\bibinitperiod},
+           given={Henry\bibnamedelima H},
+           giveni={H\bibinitperiod\bibinitdelim H\bibinitperiod},
+           suffix={Jr},
+           suffixi={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {SIAM}%
+      }
+      \strng{namehash}{8051c88cd8e26f2bdfdbd9d0297cb418}
+      \strng{fullhash}{8051c88cd8e26f2bdfdbd9d0297cb418}
+      \strng{bibnamehash}{8051c88cd8e26f2bdfdbd9d0297cb418}
+      \strng{authorbibnamehash}{8051c88cd8e26f2bdfdbd9d0297cb418}
+      \strng{authornamehash}{8051c88cd8e26f2bdfdbd9d0297cb418}
+      \strng{authorfullhash}{8051c88cd8e26f2bdfdbd9d0297cb418}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the Society for industrial and Applied Mathematics}
+      \field{title}{The numerical solution of parabolic and elliptic differential equations}
+      \field{year}{1955}
+      \field{number}{1}
+      \range{number}{1}
+      \field{pages}{28\bibrangedash 41}
+      \range{pages}{14}
+      \field{volume}{3}
+      \range{volume}{1}
+    \endentry
+    \entry{douglas1955numerical}{article}{}
+      \name{author}{1}{}{%
+        {{hash=3c9e0df1248c5223e2afce60e8d4f6b9}{%
+           family={Douglas},
+           familyi={D\bibinitperiod},
+           given={Jim},
+           giveni={J\bibinitperiod},
+           suffix={Jr},
+           suffixi={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {SIAM}%
+      }
+      \strng{namehash}{3c9e0df1248c5223e2afce60e8d4f6b9}
+      \strng{fullhash}{3c9e0df1248c5223e2afce60e8d4f6b9}
+      \strng{bibnamehash}{3c9e0df1248c5223e2afce60e8d4f6b9}
+      \strng{authorbibnamehash}{3c9e0df1248c5223e2afce60e8d4f6b9}
+      \strng{authornamehash}{3c9e0df1248c5223e2afce60e8d4f6b9}
+      \strng{authorfullhash}{3c9e0df1248c5223e2afce60e8d4f6b9}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the society for industrial and applied mathematics}
+      \field{title}{On the Numerical Integration of $u_{xx} + u_{yy} = u_t$ by Implicit Methods}
+      \field{year}{1955}
+      \field{number}{1}
+      \range{number}{1}
+      \field{pages}{42\bibrangedash 65}
+      \range{pages}{24}
+      \field{volume}{3}
+      \range{volume}{1}
+    \endentry
+    \entry{яненко1959одном}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=153584e9b47b19ed60238295b14b3a0c}{%
+           family={Яненко},
+           familyi={Я\bibinitperiod},
+           given={НН},
+           giveni={Н\bibinitperiod}}}%
+      }
+      \strng{namehash}{153584e9b47b19ed60238295b14b3a0c}
+      \strng{fullhash}{153584e9b47b19ed60238295b14b3a0c}
+      \strng{bibnamehash}{153584e9b47b19ed60238295b14b3a0c}
+      \strng{authorbibnamehash}{153584e9b47b19ed60238295b14b3a0c}
+      \strng{authornamehash}{153584e9b47b19ed60238295b14b3a0c}
+      \strng{authorfullhash}{153584e9b47b19ed60238295b14b3a0c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Докл. АН СССР}
+      \field{title}{Об одном разностном методе счета многомерного уравнения теплопроводности}
+      \field{year}{1959}
+      \field{number}{6}
+      \range{number}{1}
+      \field{pages}{1207}
+      \range{pages}{1}
+      \field{volume}{125}
+      \range{volume}{1}
+    \endentry
+    \entry{дьяконов1962разностные}{article}{}
+      \name{author}{1}{}{%
+        {{hash=243d92df5fdf187ef6c9056173174b52}{%
+           family={Дьяконов},
+           familyi={Д\bibinitperiod},
+           given={Евгений\bibnamedelima Георгиевич},
+           giveni={Е\bibinitperiod\bibinitdelim Г\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Российская академия наук, Отделение математических наук}%
+      }
+      \strng{namehash}{243d92df5fdf187ef6c9056173174b52}
+      \strng{fullhash}{243d92df5fdf187ef6c9056173174b52}
+      \strng{bibnamehash}{243d92df5fdf187ef6c9056173174b52}
+      \strng{authorbibnamehash}{243d92df5fdf187ef6c9056173174b52}
+      \strng{authornamehash}{243d92df5fdf187ef6c9056173174b52}
+      \strng{authorfullhash}{243d92df5fdf187ef6c9056173174b52}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Журнал вычислительной математики и математической физики}
+      \field{title}{Разностные схемы с расщепляющимся оператором для многомерных нестационарных задач}
+      \field{year}{1962}
+      \field{number}{4}
+      \range{number}{1}
+      \field{pages}{549\bibrangedash 568}
+      \range{pages}{20}
+      \field{volume}{2}
+      \range{volume}{1}
+    \endentry
+    \entry{самарский1962одном}{article}{}
+      \name{author}{1}{}{%
+        {{hash=fb75383dbc8c7caf36f50a8fd2c28f63}{%
+           family={Самарский},
+           familyi={С\bibinitperiod},
+           given={Александр\bibnamedelima Андреевич},
+           giveni={А\bibinitperiod\bibinitdelim А\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Российская академия наук, Отделение математических наук}%
+      }
+      \strng{namehash}{fb75383dbc8c7caf36f50a8fd2c28f63}
+      \strng{fullhash}{fb75383dbc8c7caf36f50a8fd2c28f63}
+      \strng{bibnamehash}{fb75383dbc8c7caf36f50a8fd2c28f63}
+      \strng{authorbibnamehash}{fb75383dbc8c7caf36f50a8fd2c28f63}
+      \strng{authornamehash}{fb75383dbc8c7caf36f50a8fd2c28f63}
+      \strng{authorfullhash}{fb75383dbc8c7caf36f50a8fd2c28f63}
+      \field{extraname}{3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Журнал вычислительной математики и математической физики}
+      \field{title}{Об одном экономичном разностном методе решения многомерного параболического уравнения в произвольной области}
+      \field{year}{1962}
+      \field{number}{5}
+      \range{number}{1}
+      \field{pages}{787\bibrangedash 811}
+      \range{pages}{25}
+      \field{volume}{2}
+      \range{volume}{1}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput
