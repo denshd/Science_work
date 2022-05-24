@@ -2,35 +2,35 @@
 \ProvidesPackage{pre}
 \usepackage[warn]{mathtext}
 
-\usepackage{cmap}                                           % поиск в PDF
+% \usepackage{cmap}                                           % поиск в PDF
+% \usepackage{mathtext}                                       % русские буквы в формулах
+% \usepackage[T2A]{fontenc}                                   % кодировка
+% \usepackage[utf8]{inputenc}                                 % кодировка исходного текста
+% \usepackage[english, main=russian]{babel}                         % локализация и переносы
+% \usepackage{indentfirst}  
+
+% На случай, если вот прям потребуют этот TimesNewRoman
+\usepackage{ifxetex}
+\ifxetex
+    \usepackage{fontspec}
+    \usepackage[english, main=russian]{babel}
+    \usepackage{indentfirst}
+    \usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+    
+    \usepackage{unicode-math}
+    % \setmainfont{XITS}
+    % \setmathfont{XITS Math}
+    % \setmainfont{Times New Roman}
+\else
+    %%% Работа с русским языком
+    \usepackage{cmap}                                           % поиск в PDF
     \usepackage{mathtext}                                       % русские буквы в формулах
     \usepackage[T2A]{fontenc}                                   % кодировка
     \usepackage[utf8]{inputenc}                                 % кодировка исходного текста
     \usepackage[english, main=russian]{babel}                         % локализация и переносы
-    \usepackage{indentfirst}  
-
-% % На случай, если вот прям потребуют этот TimesNewRoman
-% \usepackage{ifxetex}
-% \ifxetex
-%     \usepackage{fontspec}
-%     \usepackage[english, main=russian]{babel}
-%     \usepackage{indentfirst}
-%     \usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
-    
-%     \usepackage{unicode-math}
-%     \setmainfont{XITS}
-%     \setmathfont{XITS Math}
-%     \setmainfont{Times New Roman}
-% \else
-%     %%% Работа с русским языком
-%     \usepackage{cmap}                                           % поиск в PDF
-%     \usepackage{mathtext}                                       % русские буквы в формулах
-%     \usepackage[T2A]{fontenc}                                   % кодировка
-%     \usepackage[utf8]{inputenc}                                 % кодировка исходного текста
-%     \usepackage[english, main=russian]{babel}                         % локализация и переносы
-%     \usepackage{indentfirst}                                    % делать абзацный отступ сразу после начала нового section
-%     %\frenchspacing                                             % отмена доп. пробела после точки --- конца предложения
-% \fi
+    \usepackage{indentfirst}                                    % делать абзацный отступ сразу после начала нового section
+    %\frenchspacing                                             % отмена доп. пробела после точки --- конца предложения
+\fi
 
 % \usepackage{mathtext}
 
@@ -168,13 +168,13 @@
 \newcommand{\hence}{\displaystyle \quad\Rightarrow\quad}
 \newcommand{\sogda}{\displaystyle \quad\Leftrightarrow\quad}
 
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\renewcommand{\C}{\mathbb{C}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\X}{\mathbb{X}}
-\newcommand{\Y}{\mathbb{Y}}
-\newcommand{\B}{\mathbb{B}}
+% \newcommand{\N}{\mathbb{N}}
+% \newcommand{\Z}{\mathbb{Z}}
+% \renewcommand{\C}{\mathbb{C}}
+% \newcommand{\R}{\mathbb{R}}
+% \newcommand{\X}{\mathbb{X}}
+% \newcommand{\Y}{\mathbb{Y}}
+% \newcommand{\B}{\mathbb{B}}
 
 
 \DeclareMathOperator{\sgn}{\mathop{sgn}}
@@ -250,3 +250,26 @@
 \addbibresource{bibliography.bib}
 
 \usepackage{csquotes}
+
+\usepackage{minted} 
+
+% Recommended preamble:
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{backgrounds}
+\usepgfplotslibrary{patchplots}
+\usepgfplotslibrary{fillbetween}
+\pgfplotsset{%
+layers/standard/.define layer set={%
+    background,axis background,axis grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis foreground%
+}{grid style= {/pgfplots/on layer=axis grid},%
+    tick style= {/pgfplots/on layer=axis ticks},%
+    axis line style= {/pgfplots/on layer=axis lines},%
+    label style= {/pgfplots/on layer=axis descriptions},%
+    legend style= {/pgfplots/on layer=axis descriptions},%
+    title style= {/pgfplots/on layer=axis descriptions},%
+    colorbar style= {/pgfplots/on layer=axis descriptions},%
+    ticklabel style= {/pgfplots/on layer=axis tick labels},%
+    axis background@ style={/pgfplots/on layer=axis background},%
+    3d box foreground style={/pgfplots/on layer=axis foreground},%
+    },
+}

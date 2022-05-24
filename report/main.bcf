@@ -3502,6 +3502,12 @@
     <bcf:citekey order="15">яненко1959одном</bcf:citekey>
     <bcf:citekey order="15">дьяконов1962разностные</bcf:citekey>
     <bcf:citekey order="15">самарский1962одном</bcf:citekey>
+    <bcf:citekey order="16">СамарскийТеорияРазностныхСхем</bcf:citekey>
+    <bcf:citekey order="17">СамарскийНеравномерныеСетки</bcf:citekey>
+    <bcf:citekey order="18">bezanson2017julia</bcf:citekey>
+    <bcf:citekey order="19">горюнов2015методы</bcf:citekey>
+    <bcf:citekey order="20">самарский1963примеры</bcf:citekey>
+    <bcf:citekey order="21">самарский1963примеры</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
