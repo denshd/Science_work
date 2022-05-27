@@ -274,25 +274,26 @@
         mathescape
         ]{julia}
     function local_scheme(
-        k1, k2, f, 
+        k1, k2, f,
         u0, mu_1, mu1, mu_2, mu2,
         Lx, Ly, T, Nx, Ny, Nt
         )
-        # Создание сетки
-        x = range(0, Lx, length = Nx); dx = step(x);
-        y = range(0, Ly, length = Ny); dy = step(y);
-        t = range(0, T, length = Nt); dt = step(t);
-
-        u = zeros(Nx, Ny, Nt) # Массив, хранящий решение
-        for i in 1:Nx, j in 1:Ny u[i, j, 1] = u0(x[i], y[j]) end # н.у.
     
+        # Создание сетки
+        x = range(0, Lx, length = Nx); dx = step(x)
+        y = range(0, Ly, length = Ny); dy = step(y)
+        t = range(0, T, length = Nt);  dt = step(t)
+    
+        u = zeros(Nx, Ny, Nt) # Массив, хранящий решение
+
         # Временные переменные для прогонки
         A, C = (Tuple(zeros(N - 1) for N in [Nx Ny]) for i in 1:2)
         B, D, a, b, xt = (Tuple(zeros(N) for N in [Nx Ny]) for i in 1:5)
         B[1][1] = B[1][end] = B[2][1] = B[2][end] = 1
         C[1][1] = C[2][1] = A[1][end] = A[2][end] = 0
         w = zeros(Nx, Ny)
-    
+
+        for i in 1:Nx, j in 1:Ny u[i, j, 1] = u0(x[i], y[j]) end # н.у.
         for j in 1:(Nt - 1) # Цикл по временным слоям
             for k in 1:Ny # Сначала решаем задачу вдоль оси $x$ для всех $y_k$
                 for i in 2:(Nx - 1) # Создание трёхдиагональной матрицы
@@ -315,15 +316,14 @@
                         k2(0.5 * (w[i, k] + w[i, k - 1])) +
                         k2(0.5 * (w[i, k + 1] + w[i, k]))
                     ) / dy^2
-                    C[2][k] = -k2(0.5 * (w[i, k] + w[i, k + 1])) / dx^2
+                    C[2][k] = -k2(0.5 * (w[i, k] + w[i, k + 1])) / dy^2
                     D[2][k] = w[i, k] / dt + 0.5 * f(x[i], y[k], t[j + 1])
                 end
-                D[2][1] = mu_2(x[i], t[j + 1]) D[2][end] = mu2(x[i], t[j + 1])
+                D[2][1] = mu_2(x[i], t[j + 1]); D[2][end] = mu2(x[i], t[j + 1])
                 tridiagonal_algorithm!(a[2], b[2], xt[2], A[2], B[2], C[2], D[2])
                 u[i, :, j + 1] .= xt[2]
             end
         end
-    
         return u
     end
     \end{minted}
@@ -359,6 +359,32 @@
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth, keepaspectratio]{Разностные_схемы_на_статических_сетках/Программный_код_примеры_расчётов/explicit_scheme/problem_3_loc_wireframe.pdf}
-    \caption{Серия графиков зависимостей численного решения $u_h(x, y, t)$ задачи \eqref{eq:problem_3} для фиксированных моментов времени $t \in [0, T]$.}
+    \caption{Серия графиков зависимости численного решения $u_h(x, y, t)$ задачи \eqref{eq:problem_3} для фиксированных моментов времени $t \in [0, T]$.}
     \label{fig:problem_3_wireframe}
+\end{figure}
+На \figref{fig:problem_3_wireframe} представлено численное решение задачи \eqref{eq:problem_3}.
+Решение этой задачи также представляет собой вид бегущей волны с разрывном производных решения в точках фронта.
+Была проведено сравнение с аналитическим решением:
+\begin{equation*}
+    u(x, y, t) = \begin{cases}
+        \frac{1}{2}\sqrt{-1 + \sqrt{1 + 16(t - x - 2y)}}, & t \ge x + 2y\\
+        0, & t < x + 2y
+    \end{cases}
+\end{equation*}
+На \figref{fig:problem_3_err} отражена локальная погрешность решения.
+Видно, что ситуация аналогичная той, которая была описана выше для одномерного уравнения, а именно: погрешность в окрестности особых точек на порядки превышает погрешность в остальной области.
+Число этих точек, по сравнению с общим числом точек сетки невилико, а именно, отношение 
+$
+    \frac{N_{\text{особ.}}}{N_{\text{общ.}}} \rightarrow 0
+$
+при
+$
+    N_{\text{общ.}} \rightarrow 0
+$
+Это утверждение прямо говорит о том, что просто измелчать равномерную сетку для достижения заданной точности и в окрестности особых точек \emph{нецелесообразно}.
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth, keepaspectratio]{Разностные_схемы_на_статических_сетках/Программный_код_примеры_расчётов/explicit_scheme/problem_3_loc_err_wireframe.pdf}
+    \caption{Серия графиков зависимости $|u(x, y, t) - u_h(x, y, t)|$ для фиксированных моментов времени $t \in [0, T]$.}
+    \label{fig:problem_3_err}
 \end{figure}
