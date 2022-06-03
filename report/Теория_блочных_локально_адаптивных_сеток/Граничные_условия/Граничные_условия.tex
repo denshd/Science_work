@@ -34,7 +34,7 @@
     u_l(D) = \frac{u_{l - 1}(A) + u_{l - 1}(B)}{2}
 \end{equation*}
 Для большей точности расчёта помимо измельчения пространственной сетки происходит и измельчение временной сетки, а именно:
-\begin{equation*}
+\begin{equation}\label{eq:frac_time_step}
     \frac{\Delta x_{l}}{\Delta x_{l - 1}} = \frac{\Delta t_{l}}{\Delta t_{l - 1}}.
-\end{equation*}
+\end{equation}
 Это позволяет, например, избежать появления неустойчивости в случае использования явной схемы.
